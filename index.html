@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Team working draft: climate hazards, adaptation actions and what works, country by country.">
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+</head>
+<body>
+</head><body>
+<title>Landscape Climate Resilience</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap">
+<style>
+/* Layout: working tool on a black-and-white base (WWF-style), brand secondary colours only for landscape groups, accents and confidence. */
+:root{
+  --bg:#ffffff; --panel:#ffffff; --soft:#f4f2ea; --ink:#000000; --muted:#555555; --line:#dcdcdc;
+  --bar:#000000; --bar-ink:#ffffff;
+  --accent:#007932; --accent-ink:#ffffff;
+  --kaza:#f07d00; --soknot:#da1d52; --congo:#007932; --other:#00728f; --salonga:#7b8427; --virunga:#6e4a9e; --outside:#9a681c;
+  --hi:#00602a; --hi-bg:#dcefe2; --med:#5c4a00; --med-bg:#fbefa6; --lo:#a3123c; --lo-bg:#f9dbe3;
+  --off:#00728f; --off-bg:#dcedf1; --oth:#812990; --oth-bg:#efe1f2;
+  --land:#ebe8dc; --land-line:#c4bc8e; --sea:#f7f7f7;
+  --f:"Open Sans", "Segoe UI", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111111; --panel:#1b1b1b; --soft:#232320; --ink:#f2f2f2; --muted:#a8a8a8; --line:#333333;
+  --bar:#000000; --bar-ink:#ffffff; --accent:#8cc63f; --accent-ink:#0b0b0b;
+  --kaza:#f5a54a; --soknot:#f0648a; --congo:#5fbf6e; --other:#3fb5cf; --salonga:#b7c25a; --virunga:#ad8fd6; --outside:#c99a55;
+  --hi:#9be0ad; --hi-bg:#163322; --med:#f5d200; --med-bg:#3a3410; --lo:#f58fab; --lo-bg:#3d1822;
+  --off:#7fcde0; --off-bg:#12303a; --oth:#d59be0; --oth-bg:#341b3a;
+  --land:#2a2924; --land-line:#57523a; --sea:#151515; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111111; --panel:#1b1b1b; --soft:#232320; --ink:#f2f2f2; --muted:#a8a8a8; --line:#333333;
+  --bar:#000000; --bar-ink:#ffffff; --accent:#8cc63f; --accent-ink:#0b0b0b;
+  --kaza:#f5a54a; --soknot:#f0648a; --congo:#5fbf6e; --other:#3fb5cf; --salonga:#b7c25a; --virunga:#ad8fd6; --outside:#c99a55;
+  --hi:#9be0ad; --hi-bg:#163322; --med:#f5d200; --med-bg:#3a3410; --lo:#f58fab; --lo-bg:#3d1822;
+  --off:#7fcde0; --off-bg:#12303a; --oth:#d59be0; --oth-bg:#341b3a;
+  --land:#2a2924; --land-line:#57523a; --sea:#151515; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:15px/1.55 var(--f);margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bar)}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,h3{font-family:var(--f);font-weight:800;text-wrap:balance;line-height:1.15;margin:0;letter-spacing:-.01em}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bar);color:var(--bar-ink)}
+header.top .wrap{display:flex;align-items:center;gap:10px;padding-block:10px;flex-wrap:wrap}
+.brand{font-weight:800;font-size:15px;color:var(--bar-ink);text-decoration:none;text-transform:uppercase;letter-spacing:.02em;display:flex;gap:10px;align-items:center}
+.brand small{white-space:nowrap;font-weight:600;font-size:11px;opacity:.7;letter-spacing:.06em}
+nav.main{display:flex;gap:2px;flex-wrap:wrap;margin-left:auto}
+nav.main a{padding:6px 8px;border-radius:4px;text-decoration:none;color:#d6d6d6;font-weight:700;font-size:14px}
+nav.main a:hover{color:#fff}
+nav.main a[aria-current="page"]{background:#fff;color:#000}
+.tools{display:flex;gap:8px;align-items:center}
+.gsearch{display:flex;align-items:center}
+.gsearch input{font:14px var(--f);width:150px;max-width:42vw;padding:5px 10px;border-radius:999px;border:1px solid #555;background:#1a1a1a;color:#fff}
+.gsearch input::placeholder{color:#aaa}
+.res{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--gc);border-radius:6px;padding:10px 14px;margin-bottom:8px;display:block;text-decoration:none;color:var(--ink)}
+.res:hover{border-color:var(--ink)}
+.res .where{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.res .t{font-weight:700;margin:2px 0}
+.res .s{font-size:13.5px;color:var(--muted)}
+.flash{animation:flash 2.2s ease-out}
+@keyframes flash{0%{background:var(--med-bg)}100%{background:transparent}}
+.switch{font:600 12px var(--f);color:#d6d6d6;background:transparent;border:1px solid #555;border-radius:999px;padding:4px 10px;cursor:pointer}
+.switch[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+main{padding-block:24px 64px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.lede{color:var(--muted);max-width:68ch;font-size:16px}
+.h1{font-size:clamp(28px,4.4vw,44px);margin:6px 0 8px;text-transform:uppercase}
+/* home */
+.home{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:28px;align-items:start;margin-top:18px}
+@media (max-width:860px){.home{grid-template-columns:1fr}}
+.mapbox{background:var(--sea);border:1px solid var(--line);border-radius:6px;padding:8px;position:relative}
+.mapbox svg{width:100%;height:auto;display:block}
+.map-land{fill:var(--land);stroke:var(--land-line);stroke-width:1.2}
+.map-c{fill:var(--land);stroke:var(--land-line);stroke-width:calc(.7px * var(--zs,1));stroke-linejoin:round}
+.hz .map-c.focus.hi,.hz:hover .map-c.focus.hi{fill:color-mix(in srgb,var(--land) 40%,var(--ink) 30%);stroke:var(--ink);stroke-width:calc(1.6px * var(--zs,1))}
+.map-c.focus{fill:color-mix(in srgb,var(--land) 70%,var(--ink) 12%);cursor:pointer}
+.hz.on .map-c.focus,.hz:hover .map-c.focus{fill:color-mix(in srgb,var(--land) 55%,var(--ink) 22%)}
+.map-cl{font:700 calc(13px * var(--zs,1)) var(--f);fill:var(--ink);pointer-events:none;paint-order:stroke;stroke:var(--sea);stroke-width:calc(3.5px * var(--zs,1));stroke-linejoin:round}
+.map-cl.other{font-weight:600;fill:var(--muted)}
+.hz.faint .map-zone{fill-opacity:.12;stroke-opacity:.4}
+.mapbox{position:relative;touch-action:none}
+.mapbox svg{cursor:grab;user-select:none}
+.mapbox svg.dragging{cursor:grabbing}
+.minimap svg,.mapbox svg{}
+@media (max-width:700px){header.top{position:static}body::before{display:none}}
+.zoomctl{position:absolute;right:14px;top:14px;display:grid;gap:4px}
+.zoomctl button{width:34px;height:34px;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font:800 18px var(--f);cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.zoomctl button:hover{border-color:var(--ink)}
+.lpanel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:center;margin:14px 0 6px}
+@media (max-width:760px){.lpanel{grid-template-columns:1fr}}
+.minimap{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--sea)}
+.minimap svg{width:100%;height:auto;display:block;max-height:420px}
+.shares .bar{grid-template-columns:minmax(90px,140px) 1fr auto}
+.mapbox .map-zone{cursor:pointer;fill-opacity:.38;stroke-width:calc(1.4px * var(--zs,1));transition:fill-opacity .15s}
+.mapbox .hz.on .map-zone,.mapbox .hz:hover .map-zone{fill-opacity:.65}
+.mapbox .map-zone.swio{stroke-width:calc(14px * var(--zs,1));stroke-opacity:.35;stroke-linecap:round;stroke-linejoin:round}
+.map-zone{cursor:pointer;opacity:.3;transition:opacity .15s}
+.map-zone.on{opacity:.62}
+.map-dot{cursor:pointer}
+.map-dot circle{stroke:var(--panel);stroke-width:2;transition:r .15s}
+.map-dot.on circle{r:9}
+.map-dot text{font:700 12px var(--f);fill:var(--ink);paint-order:stroke;stroke:var(--sea);stroke-width:3px}
+.map-lbl{font:800 calc(15px * var(--zs,1)) var(--f);text-transform:uppercase;letter-spacing:.02em;pointer-events:none;paint-order:stroke;stroke:var(--panel);stroke-width:calc(4px * var(--zs,1));stroke-linejoin:round}
+.dim{opacity:.15!important}
+.mapcard{min-height:92px;margin-top:10px;background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--gc,var(--line));border-radius:6px;padding:10px 14px;font-size:14px}
+.mapcard b{font-size:16px}
+.mapcard p{margin:4px 0 0;color:var(--muted)}
+.legend{display:flex;gap:6px;flex-wrap:wrap;padding:10px 0 2px}
+.legend button{font:600 12px var(--f);display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:999px;padding:4px 10px;cursor:pointer}
+.legend button[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.legend i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.groups{display:grid;gap:12px}
+.gcard{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 16px;border-top:5px solid var(--gc)}
+.gcard h2{font-size:17px;margin-bottom:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--soft);border-radius:999px;padding:4px 10px;font-size:13px;text-decoration:none;color:var(--ink)}
+.chip:hover{border-color:var(--ink)}
+.chip.land{font-weight:700}
+.qgrid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:12px}
+@media (max-width:860px){.qgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.qcard{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:12px 14px;text-decoration:none;color:var(--ink);display:grid;gap:4px;border-bottom:4px solid var(--accent)}
+.qcard:hover{background:var(--soft)}
+.qcard .n{font-size:12px;font-weight:800;color:var(--accent)}
+.qcard b{font-size:15px}
+.qcard span{font-size:12px;color:var(--muted)}
+.bonus-teaser{margin-top:28px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;background:var(--ink);color:var(--bg);border-radius:6px;padding:16px 20px}
+.bonus-teaser h2{font-size:20px;text-transform:uppercase}
+.bonus-teaser p{margin:0;opacity:.85;flex:1 1 300px}
+.bonus-teaser a{background:var(--bg);color:var(--ink);font-weight:700;text-decoration:none;padding:8px 14px;border-radius:4px}
+/* place page */
+.crumb{font-size:13px;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
+.crumb a{color:var(--muted)}
+.place-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:6px 0 10px}
+.place-h h1{font-size:clamp(28px,4vw,40px);text-transform:uppercase}
+.kind{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:3px 8px;border-radius:3px;color:#fff;background:var(--gc)}
+.glance{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:16px 0}
+.gl{background:var(--soft);border-radius:6px;padding:10px 12px;text-decoration:none;color:var(--ink);display:grid;gap:6px;align-content:start;border-top:3px solid var(--accent)}
+.gl:hover{outline:1px solid var(--ink)}
+.gl .t{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.05em}
+.gl .v{font-size:13px;color:var(--muted)}
+.qnav{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--hh,50px));z-index:4;background:var(--bg);padding-block:8px;display:flex;gap:6px;flex-wrap:wrap;border-bottom:1px solid var(--line);margin-bottom:8px}
+.qnav a{font-size:13px;font-weight:600;padding:4px 10px;border-radius:999px;border:1px solid var(--line);text-decoration:none;color:var(--ink);background:var(--panel)}
+.qnav a:hover{border-color:var(--ink)}
+.prose{max-width:76ch}
+.prose p{margin:0 0 10px}
+details.intro-more{margin:4px 0 10px}
+details.intro-more summary{cursor:pointer;font-weight:700;font-size:14px}
+section.q{padding-top:22px;scroll-margin-top:110px}
+section.q>h2{font-size:22px;margin-bottom:10px;display:flex;gap:10px;align-items:baseline}
+section.q>h2 .n{font-size:13px;color:#fff;background:var(--accent);padding:2px 7px;border-radius:3px}
+.blk{margin-bottom:12px}
+.verdict{border-left:4px solid var(--ink);background:var(--soft);padding:10px 14px;border-radius:0 6px 6px 0;max-width:80ch}
+details.src{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:8px 14px;margin:12px 0}
+details.src summary{cursor:pointer;font-weight:700}
+details.src p{font-size:13.5px;color:var(--muted);margin:8px 0}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:640px}
+th{text-align:left;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--bar-ink);background:var(--bar);padding:8px 10px;vertical-align:bottom}
+td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:nth-child(even) td{background:color-mix(in srgb,var(--soft) 55%,transparent)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-weight:700;min-width:160px}
+td.src-c{font-size:12.5px;color:var(--muted);min-width:150px}
+.tbl.clip tr.more{display:none}
+.morebtn{display:block;width:100%;font:700 13px var(--f);border:0;border-top:1px solid var(--line);background:var(--soft);color:var(--ink);padding:8px;cursor:pointer}
+body.compact td.src-c,body.compact th.src-h,body.compact .confnote{display:none}
+.conf{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.c-hi{color:var(--hi);background:var(--hi-bg)} .c-med{color:var(--med);background:var(--med-bg)} .c-lo{color:var(--lo);background:var(--lo-bg)}
+.confnote{display:block;font-size:12px;color:var(--muted);margin-top:4px}
+.tag{font-size:10.5px;font-weight:800;padding:1px 5px;border-radius:3px;letter-spacing:.03em}
+.tag-off{color:var(--off);background:var(--off-bg)} .tag-oth{color:var(--oth);background:var(--oth-bg)}
+.tick{font-size:11px;font-weight:800;padding:1px 6px;border-radius:3px;color:var(--hi);background:var(--hi-bg)}
+.tick.open{color:var(--lo);background:var(--lo-bg)}
+/* compare */
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{font:700 13px var(--f);border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:6px 12px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.search{flex:1 1 220px;min-width:0}
+.search input{width:100%;font:14px var(--f);padding:8px 12px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink)}
+details.cmp{background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--gc);border-radius:6px;margin-bottom:10px}
+details.cmp>summary{cursor:pointer;padding:10px 14px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+details.cmp>summary b{font-size:16px}
+details.cmp>summary .meta{font-size:12px;color:var(--muted);margin-left:auto;display:flex;gap:6px;align-items:center}
+details.cmp .gist{flex-basis:100%;font-size:13px;color:var(--muted)}
+details.cmp .inner{padding:0 14px 14px}
+.empty{color:var(--muted);padding:20px 0}
+mark{background:var(--med-bg);color:inherit;padding:0 1px}
+/* bonus */
+.bonus{display:grid;gap:18px;margin-top:18px}
+.bcard{background:var(--panel);border:1px solid var(--line);border-top:6px solid var(--bc);border-radius:6px;padding:18px 20px}
+.bcard h2{font-size:22px;margin:4px 0 10px}
+.bcard .src-line{font-size:13px;color:var(--muted)}
+.bcard li{margin-bottom:8px}
+/* library */
+.lib-group{margin-top:22px}
+.lib-group h2{font-size:18px;margin-bottom:8px}
+.lib-item{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin-bottom:8px;font-size:14px}
+.lib-item .where{font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.lib-item ul{margin:4px 0 0;padding-left:18px}
+a.srcl{color:inherit;text-decoration:underline dotted;text-underline-offset:2px}
+a.srcl:hover{color:var(--accent)}
+.conf[data-tip]{cursor:help}
+#tip{position:fixed;z-index:20;max-width:380px;background:var(--ink);color:var(--bg);font-size:12.5px;line-height:1.45;padding:9px 11px;border-radius:6px;box-shadow:0 4px 18px rgba(0,0,0,.25);pointer-events:none;opacity:0;transition:opacity .12s}
+#tip.on{opacity:1}
+#tip b{display:block;margin-bottom:3px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:18px 0}
+.stat{background:var(--soft);border-radius:6px;padding:12px 14px;border-top:4px solid var(--accent)}
+.stat .v{font-size:30px;font-weight:800;line-height:1.1;font-variant-numeric:tabular-nums}
+.stat .l{font-size:13px;color:var(--muted)}
+a.stat{text-decoration:none;color:var(--ink)}
+.bars{display:grid;gap:8px;max-width:760px}
+.bar{display:grid;grid-template-columns:minmax(150px,240px) 1fr auto;gap:10px;align-items:center;font-size:13.5px}
+.bar .track{background:var(--soft);height:14px;border-radius:3px;overflow:hidden}
+.bar .fill{height:100%;background:var(--accent);border-radius:3px}
+.bar .n{font-variant-numeric:tabular-nums;color:var(--muted);min-width:110px;text-align:right}
+@media (max-width:560px){.bar{grid-template-columns:1fr auto}.bar .track{grid-column:1/-1;grid-row:2}}
+.stack{display:flex;height:22px;border-radius:4px;overflow:hidden;max-width:760px;margin:6px 0 4px}
+.stack span{display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+footer{background:var(--bar);color:#cfcfcf;font-size:12px}
+footer .wrap{padding-block:16px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.cmpnote{padding:10px 14px;border-left:4px solid var(--gc);margin:6px 0;background:var(--card,transparent);font-size:14px}
+.picker{border:1px solid var(--line);border-radius:6px;padding:10px 14px;margin:12px 0;background:var(--card,transparent)}
+.picker summary{cursor:pointer}.picker .meta{font-size:13px;color:var(--muted);margin-left:6px}
+.pickgroups{display:grid;gap:8px;margin-top:10px}.pg{display:flex;flex-wrap:wrap;gap:6px;align-items:center;border-left:4px solid var(--gc);padding-left:8px}
+.pg .eyebrow{min-width:120px}
+.pick{font:inherit;font-size:13px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:transparent;color:inherit;cursor:pointer}
+.pick[aria-pressed="true"]{background:var(--ink);color:var(--bg,#fff);border-color:var(--ink)}
+.pick.clear{border-style:dashed}
+.cmpgrid{display:grid;grid-template-columns:repeat(var(--n),minmax(300px,1fr));gap:16px;overflow-x:auto;padding-bottom:8px}
+@media (max-width:760px){.cmpgrid{grid-template-columns:1fr}.pg .eyebrow{min-width:0;width:100%}}
+.sidecol{border-top:5px solid var(--gc);padding-top:8px;min-width:0}.sidecol h2{font-size:20px;margin:0 0 2px}.sidecol .gist{font-size:14px}
+.sidecol .tbl{font-size:13px}
+.qsum{font-size:16px;line-height:1.6;max-width:78ch;border-left:4px solid var(--gc,var(--accent));padding:2px 0 2px 14px;margin:6px 0 14px}
+.qsum strong{font-weight:700}
+.sidecol .qsum{font-size:14px}
+.sidecol table,.sidecol tbody,.sidecol tr,.sidecol td{display:block;width:auto!important}
+.sidecol thead{display:none}
+.sidecol tr{border-bottom:1px solid var(--line);padding:8px 10px}
+.sidecol td{border:0!important;padding:2px 0!important}
+.sidecol td:first-child{font-weight:700}
+.sidecol td+td::before{content:attr(data-l) ": ";font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:600}
+.sidecol .tbl{overflow:visible}
+.sidecol .tbl table{min-width:0!important;table-layout:auto!important}
+.sidecol td{white-space:normal!important;overflow-wrap:anywhere}
+.introgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,1fr);gap:28px;align-items:start;margin-bottom:6px}
+#widebtn,#compact{white-space:nowrap}
+.introgrid.nopanel{grid-template-columns:1fr}
+.introside .lpanel{grid-template-columns:1fr;gap:12px;margin:4px 0 0}
+.introside .minimap svg{max-height:340px}
+@media (max-width:860px){.introgrid{grid-template-columns:1fr}}
+body.wide .wrap{max-width:none;padding-left:max(28px,env(safe-area-inset-left,0px));padding-right:max(28px,env(safe-area-inset-right,0px))}
+body.wide .prose,body.wide .qsum,body.wide .verdict,body.wide .lede{max-width:110ch}
+
+/* ND-GAIN */
+:root{--seq:#2f5d8a}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--seq:#8fb8e6}}
+:root[data-theme="dark"]{--seq:#8fb8e6}
+.ngcard{border:1px solid var(--line);border-top:4px solid var(--gc);border-radius:6px;padding:14px 16px 16px;margin:18px 0;background:var(--panel)}
+.ngcard h2{margin:0 0 4px;font-size:20px}.ngcard h2 .n{font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-right:10px}
+.ngcard h3{font-size:13px;text-transform:uppercase;letter-spacing:.05em;margin:0 0 8px}
+.ngnote{font-size:13.5px;color:var(--muted);margin:0 0 12px;max-width:90ch}
+.ngtiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:14px}
+.ngt{background:var(--soft);border-radius:6px;padding:10px 12px;display:flex;flex-direction:column;gap:2px}.ngt b{font-size:28px;line-height:1.1}.ngt>span:last-child{font-size:12.5px;color:var(--muted)}
+.nggrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.ngbar{display:grid;grid-template-columns:96px 1fr 52px;align-items:center;gap:8px;font-size:13px;margin:5px 0}.ngbar .tr{height:10px;background:var(--soft);border-radius:0 4px 4px 0;position:relative}.ngbar i{position:absolute;inset:0 auto 0 0;background:var(--gc);border-radius:0 4px 4px 0}.ngbar b{text-align:right;font-variant-numeric:tabular-nums}
+.ngw{margin:0;padding-left:18px;font-size:13.5px}.ngw li{margin:3px 0}
+.meta{font-size:12.5px;color:var(--muted);font-weight:400}
+.ngspark{width:100%;max-width:340px;height:auto;display:block}.ngspark .ln{fill:none;stroke:var(--gc);stroke-width:2}.ngspark .end{fill:var(--gc);stroke:var(--panel);stroke-width:2}.ngspark .hit{fill:transparent}.ngspark .hit:hover{fill:color-mix(in srgb,var(--ink) 6%,transparent)}
+.ngspark .ax,.ngmx .gr{stroke:var(--line);stroke-width:1}.ngspark .tk,.ngmx .tk{font-size:11px;fill:var(--muted)}
+.ngq{font-size:13.5px;margin:8px 0 0}.qd{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;background:var(--ink)}
+.ngcave{background:var(--soft);border-left:4px solid var(--ink);padding:10px 14px;font-size:14px;max-width:110ch}
+.ngh{font-size:20px;margin:26px 0 4px}
+.nglg{display:flex;flex-wrap:wrap;gap:6px 16px;margin:10px 0 4px;font-size:13px}.lg{display:inline-flex;align-items:center;gap:6px}
+.ngmxw{overflow-x:auto}.ngmx{width:100%;min-width:560px;height:auto;display:block}
+.ngmx .med{stroke:var(--muted);stroke-width:1.2;stroke-dasharray:5 4}.ngmx .ql{font-size:12px;fill:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.ngmx .at{font-size:12.5px;fill:var(--ink);font-weight:600}.ngmx .pl{font-size:12px;fill:var(--ink);font-weight:600;paint-order:stroke;stroke:var(--bg);stroke-width:3px;stroke-linejoin:round}
+.pt{stroke:var(--bg);stroke-width:2}.ngmx a:hover .pt,.ngmx a:focus .pt{stroke:var(--ink)}
+.lgdot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+.ngt-t th button{all:unset;cursor:pointer;font-weight:700}.ngt-t th button:focus-visible{outline:2px solid var(--ink)}
+.ngt-t td{white-space:nowrap}.ngt-t td.hc{text-align:center;font-variant-numeric:tabular-nums;background:color-mix(in srgb,var(--seq) var(--t),var(--panel))}.ngt-t td.na{color:var(--muted)}
+
+/* Breathing room (v19) */
+body{line-height:1.62}
+section.q{padding-top:40px;margin-top:40px;border-top:1px solid var(--line)}
+section.q:first-of-type{margin-top:24px}
+section.q>h2{margin-bottom:16px}
+section.q p,section.q .prose p{margin:0 0 14px}
+section.q .verdict{margin:18px 0}
+section.q .tbl{margin:18px 0 8px}
+details.src{margin:20px 0}
+td{padding:12px 12px}
+th{padding:10px 12px}
+.glance{gap:14px;margin:24px 0 32px}
+.home{gap:36px;margin-top:26px}
+details.cmp{margin-bottom:14px}
+details.cmp .inner{padding:4px 18px 20px}
+.lib-group{margin-bottom:32px}
+.bcard{margin-bottom:28px}
+.ngcard{margin:28px 0}
+
+/* v20: review fixes */
+.skip{position:absolute;left:-999px;top:0;z-index:30;background:var(--accent);color:var(--accent-ink);padding:8px 12px;font-weight:700}
+.skip:focus{left:8px;top:8px}
+header.top .wrap{padding-block:8px;flex-wrap:nowrap}
+.brand{font-size:14px;flex-wrap:wrap;row-gap:0}
+.brand small{font-size:10.5px}
+nav.main{flex-wrap:nowrap}
+nav.main a{padding:6px 7px;font-size:13.5px;white-space:nowrap}
+.gsearch input{width:120px}
+.viewmenu{position:relative}
+.viewmenu>summary{list-style:none;cursor:pointer;white-space:nowrap}
+.viewmenu>summary::-webkit-details-marker{display:none}
+.viewmenu>summary::after{content:"\00a0▾"}
+.viewmenu .vm{position:absolute;right:0;top:calc(100% + 8px);background:var(--bar);border:1px solid #444;border-radius:8px;padding:8px;display:flex;flex-direction:column;gap:6px;min-width:190px;z-index:8}
+.viewmenu .vm .switch{text-align:left;padding:7px 12px}
+@media (max-width:1180px){header.top .wrap{flex-wrap:wrap}nav.main{flex-wrap:wrap}}
+body.big main,body.big footer{zoom:1.22}
+body.big #tip{font-size:15px;max-width:460px}
+.keyline{font-size:13.5px;color:var(--muted);margin:0 0 14px}
+.keyline .tag,.keyline .conf{vertical-align:1px}
+.sibs{display:flex;gap:6px;flex-wrap:wrap;margin:2px 0 14px}
+.sibs .chip{font-size:13px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);text-decoration:none;color:var(--ink);background:var(--panel)}
+.sibs .chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink);font-weight:700}
+.sibnav{display:flex;justify-content:space-between;gap:10px;margin:48px 0 0;padding-top:18px;border-top:1px solid var(--line);flex-wrap:wrap}
+.sibnav a{font-weight:700;text-decoration:none;padding:10px 14px;border:1px solid var(--line);border-radius:6px;background:var(--panel);color:var(--ink)}
+.sibnav a:hover{border-color:var(--ink)}
+.qnav a[aria-current]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+td.long:first-child{font-weight:500}
+.qsum strong{font-weight:650}
+.eff{display:inline-block;font-size:12px;font-weight:700;padding:2px 8px;border-radius:4px;white-space:nowrap;border:1px solid transparent}
+.effnote{display:block;font-size:12px;color:var(--muted);margin-top:3px;line-height:1.35}
+.eff-yes{color:var(--hi);background:var(--hi-bg)}
+.eff-part{color:var(--med);background:var(--med-bg)}
+.eff-prom{color:var(--off);background:var(--off-bg)}
+.eff-nm{color:var(--muted);background:var(--soft);border-color:var(--line)}
+.eff-early{color:var(--muted);background:transparent;border-color:var(--line)}
+.eff-no{color:var(--lo);background:var(--lo-bg)}
+.conf{cursor:help}
+#tip i{font-style:normal;font-weight:700;display:inline-block;margin-top:6px}
+.wheelhint{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.78);color:#fff;font-size:13px;padding:8px 12px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .2s}
+.wheelhint.on{opacity:1}
+.bonus{grid-template-columns:minmax(0,1fr)}
+.libtoc{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 24px;align-items:center}
+.libtoc a{font-size:13.5px;font-weight:700;padding:6px 12px;border:1px solid var(--line);border-radius:999px;text-decoration:none;color:var(--ink);background:var(--panel)}
+.libtoc .switch{color:var(--ink);border-color:var(--line)}
+details.lib-group>summary{cursor:pointer;display:flex;gap:12px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--line);margin-bottom:12px}
+details.lib-group>summary h2{display:inline}
+.ngtw{overflow-x:auto}
+.ngt-t td,.ngt-t th{padding:8px 7px}
+.ngt-t td:first-child,.ngt-t th:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
+.ngt-t th:first-child{background:var(--bar)}
+.ngmxw{overflow-x:auto}
+@media (max-width:700px){.ngmxw svg{min-width:620px}}
+:root{--kind-ink:#ffffff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--kind-ink:#0b0b0b}}
+:root[data-theme="dark"]{--kind-ink:#0b0b0b}
+.kind,section.q>h2 .n{color:var(--kind-ink)}
+@media (prefers-reduced-motion: reduce){.flash{animation:none}}
+main:focus{outline:none}
+details.lib-group{margin-bottom:6px}
+.ngfind{max-width:80ch;margin:0 0 8px;padding-left:20px}.ngfind li{margin-bottom:8px}
+.cdh{font-size:16px;margin:26px 0 8px}
+.intdoc{display:inline-block;margin-left:5px;font-size:10.5px;font-weight:700;letter-spacing:.02em;padding:0 6px;border-radius:3px;border:1px dashed var(--line);color:var(--muted);white-space:nowrap;vertical-align:1px}
+/* phone: header, question bar and tables as cards */
+@media (max-width:700px){
+  header.top .wrap{gap:6px}
+  .brand small{display:none}
+  .qnav{position:static;flex-wrap:nowrap;overflow-x:auto;padding-bottom:10px}
+  .qnav a{white-space:nowrap}
+  .qnav .qt{display:none}
+  section.q{scroll-margin-top:12px}
+  .tbl:not(.ngtw){border:0;background:transparent;overflow:visible}
+  .tbl:not(.ngtw) table{min-width:0!important}
+  .tbl:not(.ngtw) thead{display:none}
+  .tbl:not(.ngtw) tr{display:block;border:1px solid var(--line);border-radius:8px;background:var(--panel);margin-bottom:10px;padding:8px 12px}
+  .tbl:not(.ngtw) tbody tr:nth-child(even) td{background:transparent}
+  .tbl:not(.ngtw) td{display:block;border:0;padding:4px 0;min-width:0}
+  .tbl:not(.ngtw) td:first-child{font-size:15px;padding-top:2px}
+  .tbl:not(.ngtw) td+td::before{content:attr(data-l);display:block;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:1px}
+  .tbl.clip tr.more{display:none}
+  .morebtn{width:100%}
+  .chip,.srcl,.switch,.conf,.legend button,.sibs .chip{min-height:34px;display:inline-flex;align-items:center}
+}
+/* print */
+@media print{
+  header.top,.qnav,.morebtn,.viewmenu,.zoomctl,.legend,#tip,.skip,.sibnav,.gsearch,body::before{display:none!important}
+  body{background:#fff;color:#000;font-size:11pt}
+  main{padding:0}
+  .tbl.clip tr.more{display:table-row!important}
+  .tbl{overflow:visible;border:1px solid #999}
+  table{min-width:0!important;font-size:9pt}
+  thead{display:table-header-group}
+  tr{break-inside:avoid}
+  th{background:#000!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section.q{break-before:auto;border-top:1px solid #999}
+  .conf,.eff,.tag{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  a{color:#000}
+  footer{background:#fff;color:#000;border-top:1px solid #999}
+}
+</style>
+
+<a class="skip" href="#app">Skip to content</a>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#map">Landscape Climate Resilience <small title="Team working draft; not an official or WWF publication">Team draft · not a WWF publication</small></a>
+  <nav class="main" aria-label="Main">
+    <a href="#map" data-nav="map">Map</a>
+    <a href="#compare-hazards" data-nav="compare">Compare</a>
+    <a href="#scores" data-nav="scores">Scores</a>
+    <a href="#bonus" data-nav="bonus">Bonus points</a>
+    <a href="#evidence" data-nav="evidence">Evidence base</a>
+    <a href="#library" data-nav="library">Library</a>
+    <a href="#about" data-nav="about">About the data</a>
+  </nav>
+  <div class="tools"><form class="gsearch" role="search" id="gsearch"><input id="gq" type="search" placeholder="Search…" aria-label="Search the whole site"></form>
+  <details class="viewmenu"><summary class="switch">View</summary><div class="vm">
+    <button type="button" class="switch" id="widebtn" aria-pressed="false" title="Use the whole screen: full width, and full screen where the browser allows it">Full screen</button>
+    <button type="button" class="switch" id="bigbtn" aria-pressed="false" title="Larger text for projecting in a meeting">Presentation size</button>
+    <button type="button" class="switch" id="compact" aria-pressed="false" title="Hide the sources column and confidence notes in tables">Compact tables</button>
+    <button type="button" class="switch" id="printbtn" title="Print this page with all rows">Print this page</button></div></details></div>
+</div></header>
+<div id="tip" role="tooltip"></div>
+<main class="wrap" id="app" tabindex="-1"><p class="empty">Loading the analysis…</p></main>
+<footer><div class="wrap">Team working draft built from the doc “Climate Resilience by Country”; not an official publication. Page references are to the printed page of each source. <span class="tag tag-off">Official</span> = government submission; <span class="tag tag-oth">Other</span> = evaluations, studies and similar.</div></footer>
+
+<script>
+(function(){
+function qLab(e,q){const i=Q.indexOf(q);if(q[0]==='works'&&e&&!e.q.techniques&&e.q.works)return ['Q3–4','Techniques in use and what works'];return ['Q'+(i+1),q[1]]}
+const Q=[["hazards","Climate hazards","What dangers, and where"],["actions","Actions under way","What is already being done"],["techniques","Techniques in use","Methods in use, and where"],["works","What works","Evidence on effectiveness"],["future","Future measures","Planned or recommended"]];
+const GCOL={kaza:"var(--kaza)",soknot:"var(--soknot)",congo:"var(--congo)",salonga:"var(--salonga)",virunga:"var(--virunga)",other:"var(--other)",outside:"var(--outside)"};
+const GSHORT={kaza:"KAZA",soknot:"SOKNOT",congo:"Congo Basin",salonga:"Salonga",virunga:"Greater Virunga",other:"SW Indian Ocean",outside:"Outside the landscapes"};
+const MEMBERS={"kaza-landscape":["angola","botswana","namibia","zambia","zimbabwe"],"soknot-landscape":["kenya","tanzania"],"congo-basin-landscape":["central-african-republic","cameroon","gabon","republic-of-congo"],"greater-virunga-landscape":["dr-congo"],"salonga-national-park":["dr-congo"],"south-west-indian-ocean-seascape":["mozambique","madagascar","tanzania","kenya"]};
+const ROWS_SHOWN=6;
+let D=null, ENT={};
+const app=document.getElementById('app');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const strip=h=>String(h||'').replace(/<[^>]+>/g,'');
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+/* compact toggle */
+const setHH=()=>{const hd=document.querySelector('header.top');document.documentElement.style.setProperty('--hh',(getComputedStyle(hd).position==='sticky'?hd.offsetHeight:0)+'px')};setHH();addEventListener('resize',setHH);
+const cbtn=document.getElementById('compact');
+function setCompact(on){document.body.classList.toggle('compact',on);cbtn.setAttribute('aria-pressed',on);store.set('compact',on?'1':'0')}
+cbtn.onclick=()=>setCompact(!document.body.classList.contains('compact'));
+setCompact(store.get('compact')==='1');
+const wbtn=document.getElementById('widebtn');
+function setWide(on,fs){document.body.classList.toggle('wide',on);wbtn.setAttribute('aria-pressed',on);wbtn.textContent=on?'Exit full screen':'Full screen';store.set('wide',on?'1':'0');
+  try{if(fs&&on&&document.fullscreenEnabled&&!document.fullscreenElement)document.documentElement.requestFullscreen().catch(()=>{});
+      if(fs&&!on&&document.fullscreenElement)document.exitFullscreen().catch(()=>{})}catch(e){}
+  setTimeout(()=>document.querySelectorAll('.mapbox svg,.minimap svg').forEach(sizeLabels),60)}
+wbtn.onclick=()=>setWide(!document.body.classList.contains('wide'),true);
+const bbtn=document.getElementById('bigbtn');
+function setBig(on){document.body.classList.toggle('big',on);bbtn.setAttribute('aria-pressed',on);store.set('big',on?'1':'0');setTimeout(()=>{setHH();document.querySelectorAll('.mapbox svg,.minimap svg').forEach(sizeLabels)},60)}
+bbtn.onclick=()=>setBig(!document.body.classList.contains('big'));setBig(store.get('big')==='1');
+document.getElementById('printbtn').onclick=()=>{document.querySelector('.viewmenu').open=false;setTimeout(()=>print(),50)};
+addEventListener('beforeprint',()=>{document.querySelectorAll('details').forEach(d=>{if(!d.open){d.dataset.pc='1';d.open=true}})});
+addEventListener('afterprint',()=>{document.querySelectorAll('details[data-pc]').forEach(d=>{d.open=false;delete d.dataset.pc})});
+document.addEventListener('click',e=>{const vm=document.querySelector('.viewmenu');if(vm&&vm.open&&!vm.contains(e.target))vm.open=false});
+document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement&&document.body.classList.contains('wide')&&wbtn.dataset.fs)setWide(false,false);wbtn.dataset.fs=document.fullscreenElement?'1':''});
+setWide(store.get('wide')==='1',false);
+
+let CONFDEF={},CONFDEF4={};
+const LVL=s=>{const m=String(s).match(/^(High|Medium|Low)(\s*[–-]\s*(High|Medium|Low))?/i);if(!m)return null;const a=m[1][0].toUpperCase()+m[1].slice(1).toLowerCase();return m[3]?a+'–'+m[3][0].toUpperCase()+m[3].slice(1).toLowerCase():a};
+function evType(src){const s=strip(src||'').toLowerCase();const off=/tag-off/.test(src||''),oth=/tag-oth/.test(src||'');
+  if(/self-report|own report|own case|own monitoring|implementer|annual report|status report|progress report|sitrep|project page|press|news|own data|own brochure|self-assess/.test(s))return 'Weaker: the project\'s, agency\'s or government\'s own report, or the press; not independently checked';
+  if(/independent|peer-reviewed|impact evaluation|ieg|terminal evaluation|final evaluation|interim evaluation|mid-term|audit/.test(s))return 'Stronger: includes an independent evaluation, audit or peer-reviewed study';
+  if(/ccdr|model|projection|scenario|risk profile|vulnerability index|nd-gain/.test(s))return 'Moderate: analysis or modelling (for example a World Bank CCDR), not a field measurement';
+  if(off&&!oth)return 'Moderate: an official government plan or submission; it says what the government reports or intends, not checked independently';
+  return 'Moderate: a secondary source (study, report or review)'}
+function basis(src){
+  if(!src)return '';
+  const s=strip(src), lo=s.toLowerCase(), out=[];
+  const off=(src.match(/tag-off/g)||[]).length, oth=(src.match(/tag-oth/g)||[]).length;
+  if(off&&oth)out.push('official and outside sources agree or add to each other');
+  else if(off)out.push('from official government sources');
+  else if(oth)out.push('from outside sources only (no official source)');
+  if(/independent|impact evaluation|quasi-experimental|peer-reviewed/.test(lo))out.push('includes an independent evaluation or peer-reviewed study');
+  else if(/evaluation|review/.test(lo))out.push('includes an evaluation or review');
+  if(/self-report|own report|own brochure|written by .* itself|management/.test(lo))out.push('results partly self-reported');
+  if(/approx/.test(lo))out.push('some page numbers approximate');
+  if(/press|news|report on/.test(lo)&&!off)out.push('partly press reports');
+  return out.join('; ');
+}
+function confBadge(k){const b=k.toLowerCase();const c=b.startsWith('h')?'c-hi':b.startsWith('m')?'c-med':'c-lo';return `<span class="conf ${c}">${esc(k)}</span>`}
+function confCell(h,src,rowWhy,qk){
+  const txt=strip(h);
+  const m=txt.match(/^(High|Medium|Low)(\s*[–-]\s*(High|Medium|Low))?/i);
+  if(!m) return h;
+  const base=m[1].toLowerCase();
+  const cls=base.startsWith('h')?'c-hi':base.startsWith('m')?'c-med':'c-lo';
+  const rest=txt.slice(m[0].length).trim();
+  const lvl=base.charAt(0).toUpperCase()+base.slice(1);
+  const why=rowWhy?rowWhy.replace(/\.$/,''):[rest.replace(/^[(]|[)]$/g,''),basis(src)].filter(Boolean).join('. ');
+  const full=LVL(m[0])||lvl;const W=why?' Why this rating: '+why.charAt(0).toUpperCase()+why.slice(1)+'.':'';
+  const tip=`Why this rating|${why?why.charAt(0).toUpperCase()+why.slice(1)+'.':(qk==='works'?CONFDEF4[full]:CONFDEF[full])||''}`;
+  return `<span class="conf ${cls}" tabindex="0" data-tip="${esc(tip)}">${esc(m[0])}</span>${rest?`<span class="confnote">${esc(rest.replace(/^[(]|[)]$/g,''))}</span>`:''}`;
+}
+function effCell(c){const raw=strip(c).trim();if(!raw||raw==='-'||raw==='—')return c;const lo=raw.toLowerCase();let k;
+  if(/^(no\b|no measurable|no evidence)/.test(lo))k=['No','eff-no'];
+  else if(/^(too early|not yet known|not yet:|not funded)/.test(lo)||/^not yet$/.test(lo))k=['Too early','eff-early'];
+  else if(/^not yet\b/.test(lo))k=['Too early','eff-early'];
+  else if(/^(promising|likely|plausible|possibly|yes \(early\))/.test(lo))k=['Promising','eff-prom'];
+  else if(/^(not measured|unknown|unclear|not shown|not yet shown|reported yes)/.test(lo))k=['Not measured','eff-nm'];
+  else if(/^yes/.test(lo))k=['Yes','eff-yes'];
+  else k=['Partly','eff-part'];
+  let note=raw;const lw=k[0].toLowerCase();if(lo===lw)note='';else if(lo.startsWith(lw))note=raw.slice(k[0].length).replace(/^[\s:;,(]+/,'').replace(/\)$/,'');
+  return `<span class="eff ${k[1]}">${k[0]}</span>${note?`<span class="effnote">${esc(note)}</span>`:''}`}
+function table(b,hl,noClip,qk){
+  const head=b.head.map(h=>strip(h).toLowerCase());
+  const ci=head.findIndex(h=>h.startsWith('confidence'));
+  const si=head.map((h,i)=>/^sources?/.test(h)?i:-1).filter(i=>i>=0);
+  const clip=!noClip&&!hl&&b.rows.length>ROWS_SHOWN+1;const ei=head.findIndex(h=>h.startsWith('effective'));
+  const body=b.rows.map((r,ri)=>`<tr${clip&&ri>=ROWS_SHOWN?' class="more"':''}>`+r.map((c,i)=>{
+    let v=i===ci?confCell(c,si.length?r[si[0]]:'',b.why&&b.why[ri],qk):i===ei?effCell(c):c; if(hl) v=highlight(v,hl);
+    const cls=[si.includes(i)?'src-c':'',i===0&&strip(c).length>70?'long':''].filter(Boolean).join(' ');
+    return `<td data-l="${esc(strip(b.head[i]))}"${cls?` class="${cls}"`:''}>${v}</td>`}).join('')+'</tr>').join('');
+  return `<div class="tbl blk${clip?' clip':''}"><table><thead><tr>${b.head.map((h,i)=>`<th${si.includes(i)?' class="src-h"':''}>${h}</th>`).join('')}</tr></thead><tbody>${body}</tbody></table>${clip?`<button type="button" class="morebtn" data-n="${b.rows.length}">Show all ${b.rows.length} rows</button>`:''}</div>`;
+}
+function wireMore(root){root.querySelectorAll('.morebtn').forEach(btn=>btn.onclick=()=>{const t=btn.parentElement;const open=t.classList.toggle('clip');btn.textContent=open?`Show all ${btn.dataset.n} rows`:'Show fewer rows'})}
+function isVerdict(h){return /^<strong>(Verdict|Gap)/.test(h)}
+function blocks(bs,hl,noClip,qk){
+  return (bs||[]).map((b,i)=>{
+    if(i===0&&b.t==='p'&&!isVerdict(b.h)&&bs[1]&&bs[1].t==='table') return `<p class="blk prose qsum">${hl?highlight(b.h,hl):b.h}</p>`;
+    if(b.t==='table') return table(b,hl,noClip,qk);
+    if(b.t==='ul'||b.t==='ol') return `<${b.t} class="blk prose">${b.items.map(i=>`<li>${hl?highlight(i,hl):i}</li>`).join('')}</${b.t}>`;
+    if(b.t==='h') return `<h3 class="blk" style="margin-top:14px;font-size:17px">${b.h}</h3>`;
+    return `<p class="blk ${isVerdict(b.h)?'verdict':'prose'}">${hl?highlight(b.h,hl):b.h}</p>`;
+  }).join('');
+}
+function highlight(html,q){
+  if(!q) return html;
+  const re=new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+  return html.split(/(<[^>]+>)/).map(p=>p.startsWith('<')?p:p.replace(re,'<mark>$1</mark>')).join('');
+}
+function firstSentence(t,max=190){t=t.trim();const m=t.match(/^.{20,}?[.;](\s|$)/);let s=m?m[0].trim():t;if(s.length>max)s=s.slice(0,max).replace(/\s\S*$/,'')+'…';return s}
+function verdictOf(sec){const v=(sec.blocks||[]).find(b=>b.t==='p'&&/^<strong>Verdict/.test(b.h));if(!v)return '';const s=firstSentence(strip(v.h).replace(/^Verdict[^:]*:\s*/,''));return s.charAt(0).toUpperCase()+s.slice(1)}
+function confSummary(bs){
+  const c={h:0,m:0,l:0};
+  (bs||[]).filter(b=>b.t==='table').forEach(b=>{const ci=b.head.findIndex(h=>/^confidence/i.test(strip(h)));if(ci<0)return;b.rows.forEach(r=>{const v=strip(r[ci]).trim().toLowerCase();if(v.startsWith('high'))c.h++;else if(v.startsWith('medium'))c.m++;else if(v.startsWith('low'))c.l++})});
+  return c;
+}
+const confChips=c=>`${c.h?`<span class="conf c-hi">${c.h} high</span> `:''}${c.m?`<span class="conf c-med">${c.m} med</span> `:''}${c.l?`<span class="conf c-lo">${c.l} low</span>`:''}`;
+const rowCount=e=>Object.values(e.q).reduce((n,s)=>n+(s.blocks||[]).filter(b=>b.t==='table').reduce((a,b)=>a+b.rows.length,0),0);
+function setNav(k){document.querySelectorAll('nav.main a').forEach(a=>{if(a.dataset.nav===k)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')})}
+
+/* ---------- map (Natural Earth borders + WWF landscape outlines) ---------- */
+let M=null;
+const ISO={AGO:'angola',BWA:'botswana',NAM:'namibia',ZMB:'zambia',ZWE:'zimbabwe',KEN:'kenya',TZA:'tanzania',CAF:'central-african-republic',CMR:'cameroon',COD:'dr-congo',GAB:'gabon',COG:'republic-of-congo',MOZ:'mozambique',MDG:'madagascar',UGA:'uganda',RWA:'rwanda'};
+const LMAP={'Kaza Landscape':['kaza-landscape','kaza','KAZA'],'SOKNOT Landscape':['soknot-landscape','soknot','SOKNOT'],'Tridom':['congo-basin-landscape','congo','TRIDOM'],'TNS':['congo-basin-landscape','congo','TNS'],
+ 'Greater Virunga Landscape':['greater-virunga-landscape','virunga','Greater Virunga'],'Salonga Landscape':['salonga-national-park','salonga','Salonga']};
+const LBL_OFF={'Kaza Landscape':[-30,-26],'SOKNOT Landscape':[34,-44],'Tridom':[-58,-10],'TNS':[18,-34],'Greater Virunga Landscape':[44,-30],'Salonga Landscape':[-20,26]};
+const ENT_LAND={};Object.entries(LMAP).forEach(([n,[id]])=>(ENT_LAND[id]=ENT_LAND[id]||[]).push(n));
+const CL_OFF={GAB:[-16,14],COG:[26,2],CAF:[0,0],RWA:[0,0]};
+const shortName=n=>n.replace('Central African Republic','CAR').replace('Central African Rep.','CAR').replace('Republic of Congo','Rep. Congo').replace('Dem. Rep. Congo','DR Congo');
+const LS=()=>M.landscapes.filter(l=>LMAP[l.name]);
+function mapSVG(o={}){
+  if(!M)return '<p class="empty" style="padding:40px">Map loading…</p>';
+  const vb=o.vb||[0,0,M.w,M.h], focus=o.focus?new Set(o.focus):null;
+  const inView=c=>c[0]>vb[0]&&c[0]<vb[0]+vb[2]&&c[1]>vb[1]&&c[1]<vb[1]+vb[3];
+  let s=`<svg viewBox="${vb.join(' ')}" role="img" aria-label="${o.mini?'Map of this landscape':'Map of the WWF priority landscapes and countries covered'}"><rect x="-2000" y="-2000" width="5000" height="5000" fill="var(--sea)"/><g>`;
+  M.countries.forEach(c=>{const id=ISO[c.iso];
+    s+=id?`<a href="#${id}" class="hz" data-id="${id}" data-g="${ENT[id]?ENT[id].group:''}" aria-label="${esc(c.name)}"><path class="map-c focus${o.hi===c.iso?' hi':''}" d="${c.d}"/></a>`:`<path class="map-c" d="${c.d}"><title>${esc(c.name)}</title></path>`});
+  LS().forEach(l=>{const [id,g]=LMAP[l.name];const dim=focus&&!focus.has(l.name);
+    s+=`<a href="#${id}" class="hz${dim?' faint':''}" data-id="${id}" data-g="${g}" aria-label="${esc(l.name)}"><path class="map-zone" d="${l.d}" fill="${GCOL[g]}" stroke="${GCOL[g]}"/></a>`});
+  if(M.swio&&(!focus||focus.has('swio')))s+=`<a href="#south-west-indian-ocean-seascape" class="hz" data-id="south-west-indian-ocean-seascape" data-g="other" aria-label="South West Indian Ocean Seascape"><path class="map-zone swio" d="${M.swio}" fill="none" stroke="${GCOL.other}"/></a>`;
+  M.countries.forEach(c=>{const id=ISO[c.iso];if(o.mini?!inView(c.c):!id)return;const co=CL_OFF[c.iso]||[0,0];s+=`<text class="map-cl${id?'':' other'}" x="${c.c[0]+co[0]}" y="${c.c[1]+co[1]}" text-anchor="middle">${esc(shortName(ENT[id]?ENT[id].name:c.name))}</text>`});
+  LS().forEach(l=>{if(focus&&!focus.has(l.name))return;const [id,g,lab]=LMAP[l.name];const off=o.mini?[0,0]:(LBL_OFF[l.name]||[0,0]);
+    s+=`<text class="map-lbl" x="${l.c[0]+off[0]}" y="${l.c[1]+off[1]}" text-anchor="middle" style="fill:${GCOL[g]}">${esc(lab)}</text>`});
+  if(M.swioLbl&&(!focus||focus.has('swio')))s+=`<text class="map-lbl" x="${M.swioLbl[0]+60}" y="${M.swioLbl[1]}" text-anchor="end" style="fill:${GCOL.other}">SW Indian Ocean</text>`;
+  return s+`</g></svg>`;
+}
+// keep text the same size on screen whatever the zoom
+function sizeLabels(svg){if(!svg||!svg.clientWidth)return;const vb=svg.viewBox.baseVal;svg.style.setProperty('--zs',Math.max(vb.width/svg.clientWidth,vb.height/svg.clientHeight).toFixed(4))}
+addEventListener('resize',()=>document.querySelectorAll('.mapbox svg,.minimap svg').forEach(sizeLabels));
+function fitBox(b,pad){let [[x0,y0],[x1,y1]]=b;x0-=pad;y0-=pad;x1+=pad;y1+=pad;const ar=M.w/M.h;let w=x1-x0,hh=y1-y0;if(w/hh>ar){const nh=w/ar;y0-=(nh-hh)/2;hh=nh}else{const nw=hh*ar;x0-=(nw-w)/2;w=nw}return [x0,y0,w,hh]}
+function unionB(ls){return [[Math.min(...ls.map(l=>l.b[0][0])),Math.min(...ls.map(l=>l.b[0][1]))],[Math.max(...ls.map(l=>l.b[1][0])),Math.max(...ls.map(l=>l.b[1][1]))]]}
+function setVB(svg,v){svg.setAttribute('viewBox',v.map(x=>x.toFixed(1)).join(' '));sizeLabels(svg)}
+function getVB(svg){const b=svg.viewBox.baseVal;return [b.x,b.y,b.width,b.height]}
+function animateVB(svg,to){const from=getVB(svg),t0=performance.now(),dur=matchMedia('(prefers-reduced-motion: reduce)').matches?0:450;
+  const step=t=>{const k=dur?Math.min(1,(t-t0)/dur):1,e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;setVB(svg,from.map((a,i)=>a+(to[i]-a)*e));if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
+function zoomTo(b,pad=40){const svg=document.querySelector('.mapbox svg');if(svg)animateVB(svg,fitBox(b,pad))}
+function zoomBy(svg,f,cx,cy){const [x,y,w,hh]=getVB(svg);const nw=Math.min(M.w*1.2,Math.max(40,w*f)),k=nw/w;
+  if(cx==null){cx=x+w/2;cy=y+hh/2}setVB(svg,[cx-(cx-x)*k,cy-(cy-y)*k,nw,hh*k])}
+// wheel, drag and pinch zoom for the main map
+function enableZoom(box){const svg=box.querySelector('svg');if(!svg)return;sizeLabels(svg);
+  const pt=(ev)=>{const r=svg.getBoundingClientRect(),[x,y,w,hh]=getVB(svg);return [x+(ev.clientX-r.left)/r.width*w,y+(ev.clientY-r.top)/r.height*hh]};
+  svg.addEventListener('wheel',ev=>{if(!(ev.ctrlKey||ev.metaKey)){const hint=box.querySelector('.wheelhint');if(hint){hint.classList.add('on');clearTimeout(hint._t);hint._t=setTimeout(()=>hint.classList.remove('on'),1400)}return}ev.preventDefault();const [cx,cy]=pt(ev);zoomBy(svg,ev.deltaY>0?1.18:1/1.18,cx,cy)},{passive:false});
+  if(!box.querySelector('.wheelhint')){const hint=document.createElement('div');hint.className='wheelhint';hint.textContent='Hold Ctrl (or ⌘) and scroll to zoom the map';box.appendChild(hint)}
+  const ptrs=new Map();let moved=0,last=null,pinch=null;
+  svg.addEventListener('pointerdown',ev=>{ptrs.set(ev.pointerId,ev);moved=0;last=ev;if(ptrs.size===2){const [a,b]=[...ptrs.values()];pinch=Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY)}});
+  svg.addEventListener('pointermove',ev=>{if(!ptrs.has(ev.pointerId))return;ptrs.set(ev.pointerId,ev);
+    if(ptrs.size===2&&pinch){const [a,b]=[...ptrs.values()];const d=Math.hypot(a.clientX-b.clientX,a.clientY-b.clientY);const c=pt({clientX:(a.clientX+b.clientX)/2,clientY:(a.clientY+b.clientY)/2});zoomBy(svg,pinch/d,c[0],c[1]);pinch=d;moved+=10;return}
+    const r=svg.getBoundingClientRect(),[x,y,w,hh]=getVB(svg);const dx=(ev.clientX-last.clientX)/r.width*w,dy=(ev.clientY-last.clientY)/r.height*hh;moved+=Math.abs(ev.clientX-last.clientX)+Math.abs(ev.clientY-last.clientY);last=ev;
+    if(moved>4){svg.classList.add('dragging');setVB(svg,[x-dx,y-dy,w,hh])}});
+  const end=ev=>{ptrs.delete(ev.pointerId);if(ptrs.size<2)pinch=null;if(!ptrs.size)setTimeout(()=>svg.classList.remove('dragging'),0)};
+  svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);
+  svg.addEventListener('click',ev=>{if(moved>4){ev.preventDefault();ev.stopPropagation()}},true);
+  box.querySelectorAll('[data-zb]').forEach(b=>b.onclick=()=>{const z=b.dataset.zb;if(z==='reset')animateVB(svg,[0,0,M.w,M.h]);else zoomBy(svg,z==='in'?1/1.5:1.5)});
+}
+function introLine(e){const p=(e.intro||[]).find(b=>b.t==='p');return p?firstSentence(strip(p.h),220):''}
+function mapCard(id){
+  const box=document.getElementById('mapcard');if(!box)return;
+  if(!id){box.style.setProperty('--gc','var(--line)');box.innerHTML=`<b>Point at a landscape or country</b><p>Coloured areas are the WWF priority landscapes; countries covered are shaded. Click to open a page. Zoom with the + and − buttons, Ctrl (⌘) + mouse wheel or two fingers, and drag to move.</p>`;return}
+  const e=ENT[id];if(!e)return;const c=confSummary(Object.values(e.q).flatMap(s=>s.blocks));
+  box.style.setProperty('--gc',GCOL[e.group]);
+  box.innerHTML=`<b>${esc(e.name)}</b> <span class="eyebrow">${GSHORT[e.group]} · ${e.kind}</span><p>${esc(introLine(e))}</p><p style="margin-top:6px">${rowCount(e)} findings ${confChips(c)}</p>`;
+}
+function hoverMap(id){
+  const svg=document.querySelector('.mapbox svg');if(!svg)return;
+  const on=new Set(id?[id,...(MEMBERS[id]||[])]:[]);
+  svg.querySelectorAll('.hz').forEach(a=>{const hit=on.has(a.dataset.id);a.classList.toggle('on',hit)});
+  mapCard(id);
+}
+// share of each landscape's area by country (from the WWF outlines and Natural Earth borders)
+function shares(eid){const names=ENT_LAND[eid];if(!M||!M.overlaps||!names)return null;let tot=0;const acc={};
+  names.forEach(n=>{const l=M.landscapes.find(x=>x.name===n);if(!l)return;tot+=l.km2;Object.entries(M.overlaps[n]||{}).forEach(([c,p])=>{if(c.startsWith('('))return;acc[c]=(acc[c]||0)+p*l.km2/100})});
+  return {km2:tot,rows:Object.entries(acc).map(([c,k])=>[shortName(c),k,100*k/tot]).filter(r=>r[2]>=0.5).sort((a,b)=>b[1]-a[1])}}
+// country locator: the country outlined, with the landscapes that reach into it
+function pathBox(d){const n=d.match(/-?\d+(?:\.\d+)?/g).map(Number);let x0=1e9,y0=1e9,x1=-1e9,y1=-1e9;for(let i=0;i+1<n.length;i+=2){const x=n[i],y=n[i+1];if(x<x0)x0=x;if(x>x1)x1=x;if(y<y0)y0=y;if(y>y1)y1=y}return [[x0,y0],[x1,y1]]}
+function countryPanel(e){if(!M)return '';const iso=Object.keys(ISO).find(k=>ISO[k]===e.id);const c=iso&&M.countries.find(x=>x.iso===iso);if(!c)return '';
+  const rows=LS().map(l=>{const p=(M.overlaps[l.name]||{})[c.name]||0;return [l,p]}).filter(([l,p])=>p>=0.5);
+  const merged={};rows.forEach(([l,p])=>{const [id,g,lab]=LMAP[l.name];const k=l.km2*p/100;merged[lab]={id,g,lab,k,p}});
+  const swio=['mozambique','madagascar','tanzania','kenya'].includes(e.id)&&M.swio;
+  const vb=fitBox(pathBox(c.d),e.id==='rwanda'?120:45);
+  const list=Object.values(merged).sort((a,b)=>b.k-a.k);
+  const txt=(list.length?list.map(x=>`<div class="bar"><span><a href="#${x.id}">${esc(x.lab)}</a></span><div class="track"><div class="fill" style="width:${Math.min(100,x.p)}%;background:${GCOL[x.g]}"></div></div><span class="n">${fmt(Math.round(x.k/100)*100)} km² · ${x.p.toFixed(0)}% of ${esc(x.lab)}</span></div>`).join(''):'')
+    +(swio?`<p style="font-size:13px;margin:8px 0 0">Coast in the <a href="#south-west-indian-ocean-seascape">South West Indian Ocean seascape</a> (indicative band on the map).</p>`:'')
+    +(!list.length&&!swio?`<p style="font-size:13px;color:var(--muted)">This country lies outside the WWF priority landscapes in this review.</p>`:'');
+  return `<div class="lpanel"><div class="minimap">${mapSVG({vb,mini:true,hi:iso,focus:[...rows.map(([l])=>l.name),...(swio?['swio']:[])]})}</div><div class="shares"><div class="eyebrow" style="margin-bottom:6px">Where ${esc(e.name)} is, and which landscapes reach into it</div>${txt}<p style="font-size:12px;color:var(--muted);margin:8px 0 0">Areas estimated from the WWF landscape outlines and Natural Earth borders.</p></div></div>`}
+function landscapePanel(e){if(!M)return '';const names=ENT_LAND[e.id];const isSwio=e.id==='south-west-indian-ocean-seascape';if(!names&&!isSwio)return '';
+  const ls=names?M.landscapes.filter(l=>names.includes(l.name)):[];const vb=isSwio?fitBox(M.swioB,40):fitBox(unionB(ls),ls.every(l=>l.km2<30000)?150:35);
+  const sh=shares(e.id);
+  const table=sh?`<div class="shares"><div class="eyebrow" style="margin-bottom:6px">How much of the landscape falls in each country</div>${sh.rows.map(([c,k,p])=>{const ce=Object.values(ENT).find(x=>x.kind==='country'&&x.name.toLowerCase()===String(c).toLowerCase());return `<div class="bar"><span>${ce?`<a href="#${ce.id}">${esc(c)}</a>`:esc(c)}</span><div class="track"><div class="fill" style="width:${p}%;background:${GCOL[e.group]}"></div></div><span class="n">${p.toFixed(0)}% · ${fmt(Math.round(k/100)*100)} km²</span></div>`}).join('')}
+    <p style="font-size:12px;color:var(--muted);margin:8px 0 0">Total ${fmt(Math.round(sh.km2/100)*100)} km²${names.length>1?` (${names.map(n=>LMAP[n][2]).join(' + ')})`:''}. Shares estimated from the WWF landscape outline and Natural Earth borders.</p></div>`
+    :`<div class="shares"><p style="font-size:13px;color:var(--muted)">The seascape has no outline in the WWF file; the band on the map is indicative. It runs along the coasts of Kenya, Tanzania, Mozambique, Madagascar and South Africa.</p></div>`;
+  return `<div class="lpanel"><div class="minimap">${mapSVG({vb,mini:true,focus:isSwio?['swio']:names})}</div>${table}</div>`}
+/* ---------- views ---------- */
+function home(){
+  setNav('map');
+  const nC=D.groups.reduce((n,g)=>n+g.entities.filter(e=>e.kind==='country').length,0), nL=D.groups.reduce((n,g)=>n+g.entities.filter(e=>e.kind==='landscape').length,0);
+  const gcards=D.groups.map(g=>`<div class="gcard" data-g="${g.id}" style="--gc:${GCOL[g.id]}"><h2>${esc(g.title)}</h2><div class="chips">${g.entities.map(e=>`<a class="chip ${e.kind==='landscape'?'land':''}" href="#${e.id}" data-id="${e.id}">${esc(e.name)}</a>`).join('')}</div></div>`).join('');
+  app.innerHTML=`<div class="eyebrow">Team draft · updated ${esc(D.built||'')}</div>
+  <h1 class="h1">Climate resilience across WWF priority landscapes</h1>
+  <p class="lede">Five questions for ${nC} countries and ${nL} landscapes: what the climate dangers are, what is being done, which techniques are used, what works, and what is planned. Every finding shows its source, page and how confident we are.</p>
+  ${statStrip()}
+  <div class="home">
+    <div><div class="mapbox">${mapSVG()}<div class="zoomctl"><button type="button" data-zb="in" aria-label="Zoom in">+</button><button type="button" data-zb="out" aria-label="Zoom out">−</button><button type="button" data-zb="reset" aria-label="Show whole map">⟲</button></div></div>
+      <div class="legend" role="group" aria-label="Zoom to a landscape"><button type="button" data-z="all" aria-pressed="true">Whole map</button>${M?LS().map(l=>{const [id,g,lab]=LMAP[l.name];return `<button type="button" data-z="${esc(l.name)}" aria-pressed="false"><i style="background:${GCOL[g]}"></i>${esc(lab)}</button>`}).join('')+(M.swioB?`<button type="button" data-z="swio" aria-pressed="false"><i style="background:${GCOL.other}"></i>SW Indian Ocean</button>`:''):''}</div>
+      <div class="mapcard" id="mapcard" aria-live="polite"></div>
+      <p style="font-size:12px;color:var(--muted);margin:6px 2px 0">Landscape outlines: WWF priority landscapes. Borders: Natural Earth 1:10m (simplified). The Indian Ocean seascape is drawn as an indicative band.</p></div>
+    <div class="groups">${gcards}</div>
+  </div>
+  <h2 style="margin-top:34px;font-size:20px;text-transform:uppercase">Or start from a question</h2>
+  <div class="qgrid">${Q.map((q,i)=>`<a class="qcard" href="#compare-${q[0]}"><span class="n">Q${i+1}</span><b>${q[1]}</b><span>${q[2]}</span></a>`).join('')}</div>
+  <div class="bonus-teaser"><h2>Bonus points</h2><p>${(()=>{const n=Object.keys(D.about).filter(isBonus).length;return (['One','Two','Three','Four','Five'][n-1]||n)+(n===1?' extra':' extras')})()}: which landscape is most vulnerable on one common scale, and nine techniques from elsewhere in East Africa that could be tried here.</p><a href="#bonus">Read them</a></div>`;
+  mapCard(null);
+  app.querySelectorAll('.hz, .chip').forEach(a=>{a.addEventListener('mouseenter',()=>hoverMap(a.dataset.id));a.addEventListener('focus',()=>hoverMap(a.dataset.id))});
+  app.querySelector('.mapbox').addEventListener('mouseleave',()=>hoverMap(null));
+  app.querySelectorAll('.legend button').forEach(b=>b.onclick=()=>{const z=b.dataset.z;app.querySelectorAll('.legend button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+    if(z==='all')zoomTo([[0,0],[M.w,M.h]],0);else if(z==='swio'){zoomTo(M.swioB,30);hoverMap('south-west-indian-ocean-seascape')}else{const l=M.landscapes.find(x=>x.name===z);zoomTo(l.b,l.km2<30000?60:30);hoverMap(LMAP[l.name][0])}});
+  if(M)enableZoom(app.querySelector('.mapbox'));
+}
+const KEYLINE=`<p class="keyline"><b>How to read the tables:</b> <span class="tag tag-off">Official</span> government source · <span class="tag tag-oth">Other</span> evaluations, studies and similar · confidence <span class="conf c-hi">High</span> → <span class="conf c-lo">Low</span>; tap or hover a confidence badge to see why. <a href="#about">More</a></p>`;
+const WORKSNOTE=`<p class="keyline">For "what works", confidence follows a stricter rule: how strong the evidence is that the technique works. A project's own report is never rated above Low–Medium.</p>`;
+function landOf(g){return g.entities.find(x=>x.kind==='landscape')}
+function sibNav(e,g){const sib=g.entities;const i=sib.indexOf(e);const pv=sib[i-1],nx=sib[i+1];
+  return `<nav class="sibnav" aria-label="More in ${esc(g.title)}">${pv?`<a class="pv" href="#${pv.id}">← ${esc(pv.name)}</a>`:'<span></span>'}<a class="up" href="#map">All landscapes</a>${nx?`<a class="nx" href="#${nx.id}">${esc(nx.name)} →</a>`:'<span></span>'}</nav>`}
+function sibChips(e,g){return `<nav class="sibs" aria-label="Pages in this landscape">${g.entities.map(x=>x===e?`<span class="chip on" aria-current="page">${esc(x.name)}</span>`:`<a class="chip" href="#${x.id}">${esc(x.name)}</a>`).join('')}</nav>`}
+function place(e){
+  setNav('map');
+  const g=D.groups.find(x=>x.id===e.group);
+  const qs=Q.filter(q=>e.q[q[0]]);
+  const [first,...rest]=e.intro;
+  const glance=qs.map(q=>{const s=e.q[q[0]];const c=confSummary(s.blocks);const v=verdictOf(s);return `<a class="gl" href="#${e.id}" data-jump="q-${q[0]}"><span class="t">${qLab(e,q).join(' ')}</span><span>${confChips(c)||'<span class="v">No table</span>'}</span>${v?`<span class="v">${esc(v)}</span>`:''}</a>`}).join('');
+  const lnd=landOf(g);
+  let h=`<div class="crumb"><a href="#map">Map</a><span>›</span>${lnd&&lnd!==e?`<a href="#${lnd.id}">${esc(g.title)}</a>`:`<span>${esc(g.title)}</span>`}</div>
+  <div class="place-h" style="--gc:${GCOL[e.group]}"><h1>${esc(e.name)}</h1><span class="kind">${e.kind}</span></div>${g.entities.length>1?sibChips(e,g):''}
+  ${(()=>{const pan=e.kind==='landscape'?landscapePanel(e):countryPanel(e);return `<div class="introgrid${pan?'':' nopanel'}"><div class="introtext"><div class="prose">${blocks(first?[first]:[])}</div>
+  ${rest.length?`<details class="intro-more"><summary>More background and how good the sources are</summary><div class="prose" style="margin-top:8px">${blocks(rest,null,true)}</div></details>`:''}</div>${pan?`<aside class="introside">${pan}</aside>`:''}</div>`})()}
+  <h2 style="font-size:15px;text-transform:uppercase;margin-top:16px">At a glance</h2>
+  <div class="glance">${glance}</div>
+  ${ngCard(e)}
+  ${e.sources.length?`<details class="src"><summary>Sources for this ${e.kind} (${e.sources.length} notes)</summary>${e.sources.map(s=>`<p>${s.h}</p>`).join('')}</details>`:''}
+  <nav class="qnav" aria-label="Questions">${qs.map(q=>`<a href="#${e.id}" data-jump="q-${q[0]}"><span class="qn">${qLab(e,q)[0]}</span><span class="qt"> ${qLab(e,q)[1]}</span></a>`).join('')}${NG&&NG.c[e.id]?`<a href="#${e.id}" data-jump="q-ndgain">Index score</a>`:''}<a href="#compare-${qs[0]?qs[0][0]:'hazards'}/${e.id}">Compare with others →</a></nav>`;
+  qs.forEach((q,qi)=>{const s=e.q[q[0]];h+=`<section class="q" id="q-${q[0]}"><h2><span class="n">${qLab(e,q)[0]}</span>${esc(strip(s.title))}</h2>${qi===0?KEYLINE:''}${q[0]==='works'?WORKSNOTE:''}${blocks(s.blocks,null,false,q[0])}</section>`});
+  h+=sibNav(e,g);
+  app.innerHTML=h;wireMore(app);app.querySelectorAll('.minimap svg').forEach(sizeLabels);
+  if(pendingHL){const p=pendingHL;pendingHL=null;const terms=p.terms;
+    app.querySelectorAll('.tbl.clip').forEach(t=>{t.classList.remove('clip');const b=t.querySelector('.morebtn');if(b)b.textContent='Show fewer rows'});
+    const walk=root=>{const tw=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);const nodes=[];while(tw.nextNode())nodes.push(tw.currentNode);
+      nodes.forEach(n=>{const lo=n.nodeValue.toLowerCase();if(!terms.some(w=>lo.includes(w)))return;const span=document.createElement('span');span.innerHTML=terms.reduce((s,w)=>highlight(s,w),esc(n.nodeValue));n.replaceWith(span)})};
+    walk(app.querySelector('main')||app);
+    setTimeout(()=>{const target=(p.sec&&document.getElementById(p.sec))||app;const m=target.querySelector('mark');(m||target).scrollIntoView({block:'center'});const row=m&&m.closest('tr,p,li');if(row)row.classList.add('flash')},30);
+    return;}
+  app.querySelectorAll('[data-jump]').forEach(a=>a.addEventListener('click',ev=>{ev.preventDefault();document.getElementById(a.dataset.jump).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}));
+  try{const links=[...app.querySelectorAll('.qnav a[data-jump]')];const io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){links.forEach(a=>{if(a.dataset.jump===en.target.id)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current')})}})},{rootMargin:'-30% 0px -60% 0px'});
+    links.forEach(a=>{const s=document.getElementById(a.dataset.jump);if(s)io.observe(s)})}catch(err){}
+  window.scrollTo(0,0);
+}
+let cmpState={g:'all',q:'',sel:[]};
+function compare(key){
+  setNav('compare');
+  const qi=Q.findIndex(q=>q[0]===key);
+  app.innerHTML=`<div class="eyebrow">Compare by question</div><h1 class="h1" style="font-size:clamp(26px,4vw,38px)">Q${qi+1}. ${Q[qi][1]}</h1><p class="lede">${Q[qi][2]}, for every country and landscape. Each line shows the headline verdict; open it for the full table, or search across all of them.</p>
+  <div class="toolbar"><div class="seg" role="group" aria-label="Question">${Q.map(q=>`<button type="button" data-q="${q[0]}" aria-pressed="${q[0]===key}">${q[1]}</button>`).join('')}</div></div>
+  <details class="picker" ${cmpState.sel.length?'':'open'}><summary><b>Choose places to compare side by side</b> <span class="meta" id="pick-n"></span></summary>
+   <div class="pickgroups">${D.groups.map(g=>`<div class="pg" style="--gc:${GCOL[g.id]}"><span class="eyebrow">${GSHORT[g.id]}</span>${g.entities.map(e=>`<button type="button" class="pick" data-pick="${e.id}" aria-pressed="${cmpState.sel.includes(e.id)}">${esc(e.name.replace(' (landscape-wide)',' (whole landscape)'))}</button>`).join('')}</div>`).join('')}</div>
+   <p style="margin:8px 0 0"><button type="button" class="pick clear" data-clear>Clear selection</button> <span style="font-size:13px;color:var(--muted)">Pick two or more. With nothing picked, all places are listed below.</span></p></details>
+  <div class="toolbar" id="cmp-filters"><div class="seg" role="group" aria-label="Landscape">${[['all','All']].concat(D.groups.map(g=>[g.id,GSHORT[g.id]])).map(([id,n])=>`<button type="button" data-g="${id}" aria-pressed="${cmpState.g===id}">${n}</button>`).join('')}</div>
+  <label class="search"><span class="eyebrow" style="display:block;margin-bottom:4px">Search within this question</span><input id="cmp-search" type="search" placeholder="e.g. drought, mangrove, early warning, Kazungula" value="${esc(cmpState.q)}"></label></div>
+  <div id="cmp-list"></div>`;
+  app.querySelectorAll('[data-q]').forEach(b=>b.onclick=()=>{location.hash='compare-'+b.dataset.q+(cmpState.sel.length?'/'+cmpState.sel.join(','):'')});
+  app.querySelectorAll('[data-g]').forEach(b=>b.onclick=()=>{cmpState.g=b.dataset.g;app.querySelectorAll('[data-g]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.g===cmpState.g));renderCmp(key)});
+  const inp=document.getElementById('cmp-search');let t;inp.addEventListener('input',()=>{clearTimeout(t);t=setTimeout(()=>{cmpState.q=inp.value.trim();renderCmp(key)},180)});
+  const syncPick=()=>{app.querySelectorAll('[data-pick]').forEach(x=>x.setAttribute('aria-pressed',cmpState.sel.includes(x.dataset.pick)));document.getElementById('pick-n').textContent=cmpState.sel.length?cmpState.sel.length+' picked: '+cmpState.sel.map(id=>ENT[id].name.replace(' (landscape-wide)','')).join(', '):'';
+    document.getElementById('cmp-filters').hidden=cmpState.sel.length>1;history.replaceState(null,'','#compare-'+key+(cmpState.sel.length?'/'+cmpState.sel.join(','):''))};
+  app.querySelectorAll('[data-pick]').forEach(b=>b.onclick=()=>{const id=b.dataset.pick;cmpState.sel=cmpState.sel.includes(id)?cmpState.sel.filter(x=>x!==id):[...cmpState.sel,id];syncPick();renderCmp(key)});
+  app.querySelector('[data-clear]').onclick=()=>{cmpState.sel=[];syncPick();renderCmp(key)};
+  syncPick();renderCmp(key);
+}
+function renderSide(key){
+  const list=document.getElementById('cmp-list');const qi=Q.findIndex(q=>q[0]===key);
+  list.innerHTML=`<div class="cmpgrid" style="--n:${cmpState.sel.length}">${cmpState.sel.map(id=>{const e=ENT[id];let s=e.q[key],note='';
+    if(!s&&key==='techniques'&&e.q.works){s=e.q.works;note='<p class="meta" style="font-size:13px">Landscape-wide pages combine Q3 and Q4; showing that table.</p>'}
+    const v=s?verdictOf(s):'';
+    return `<section class="sidecol" style="--gc:${GCOL[e.group]}"><h2><a href="#${e.id}">${esc(e.name)}</a></h2><span class="eyebrow">${GSHORT[e.group]} · ${e.kind}</span>
+      ${s?`<p class="meta">${confChips(confSummary(s.blocks))}</p>${v?`<p class="gist">${esc(v)}</p>`:''}${note}<div class="inner">${blocks(s.blocks,null,false,s===e.q.works?'works':key)}</div>`:'<p class="empty">No section for this question.</p>'}</section>`}).join('')}</div>`;
+  wireMore(list);
+}
+function renderCmp(key){
+  if(cmpState.sel.length>1)return renderSide(key);
+  const list=document.getElementById('cmp-list');const q=cmpState.q.toLowerCase();
+  let out='';
+  D.groups.filter(g=>cmpState.g==='all'||g.id===cmpState.g).forEach(g=>g.entities.forEach(e=>{if(cmpState.sel.length===1&&e.id!==cmpState.sel[0])return;
+    const s=e.q[key];
+    if(!s){if(key==='techniques'&&e.q.works&&!q)out+=`<div class="cmp cmpnote" style="--gc:${GCOL[e.group]}"><b>${esc(e.name)}</b> <span class="eyebrow">${GSHORT[e.group]}</span> <span class="meta">Landscape-wide techniques are combined with Q4. See <a href="#compare-works">What works</a> or <a href="#${e.id}" >the ${esc(e.name)} page</a> (Q3–4).</span></div>`;return}
+    let bs=s.blocks;
+    if(q){bs=bs.map(b=>b.t==='table'?{...b,rows:b.rows.filter(r=>strip(r.join(' ')).toLowerCase().includes(q))}:b).filter(b=>b.t==='table'?b.rows.length:strip(b.h||'').toLowerCase().includes(q)||strip((b.items||[]).join(' ')).toLowerCase().includes(q));if(!bs.length)return}
+    const rows=bs.filter(b=>b.t==='table').reduce((a,b)=>a+b.rows.length,0);const v=verdictOf(s);
+    out+=`<details class="cmp" style="--gc:${GCOL[e.group]}" ${q?'open':''}><summary><b>${esc(e.name)}</b><span class="eyebrow">${GSHORT[e.group]}</span><span class="meta">${rows} rows ${confChips(confSummary(bs))}</span>${v&&!q?`<span class="gist">${esc(v)}</span>`:''}</summary><div class="inner">${blocks(bs,cmpState.q,false,key)}<p style="font-size:13px"><a href="#${e.id}">Open ${esc(e.name)} →</a></p></div></details>`;
+  }));
+  list.innerHTML=out||`<p class="empty">Nothing matches “${esc(cmpState.q)}” for this question. Try a shorter word, or another question.</p>`;
+  wireMore(list);
+}
+/* ---------- ND-GAIN ---------- */
+let NG=null;
+const NGL={kaza:['KAZA','circle'],soknot:['SOKNOT','square'],congo:['Congo Basin','triangle'],virunga:['Greater Virunga','diamond'],outside:['Outside the landscapes','tridown']};
+const NGG={angola:'kaza',botswana:'kaza',namibia:'kaza',zambia:'kaza',zimbabwe:'kaza',kenya:'soknot',tanzania:'soknot','central-african-republic':'congo',cameroon:'congo','dr-congo':'congo',gabon:'congo','republic-of-congo':'congo',uganda:'virunga',rwanda:'virunga',mozambique:'outside',madagascar:'outside'};
+const NGS=[['food','Food'],['water','Water'],['health','Health'],['ecosystems','Ecosystems'],['habitat','Human habitat'],['infrastructure','Infrastructure']];
+const NGQ={red:['More vulnerable, less ready','The group with the greatest need for both adaptation and investment in readiness'],yellow:['Less vulnerable, less ready','Lower vulnerability, but adaptation may lag because readiness is low'],blue:['More vulnerable, more ready','High need, but better placed to use adaptation money'],green:['Less vulnerable, more ready','Better placed overall']};
+const ngName=id=>ENT[id]?ENT[id].name:id;
+const fx=(v,d=2)=>v==null?'–':(+v).toFixed(d);
+function shape(kind,x,y,r,cls,attrs){const s=r*1.1;switch(kind){
+ case 'square':return `<rect class="${cls}" x="${x-s*.85}" y="${y-s*.85}" width="${s*1.7}" height="${s*1.7}" rx="1.5" ${attrs}/>`;
+ case 'triangle':return `<path class="${cls}" d="M${x},${y-s*1.1}L${x+s},${y+s*.75}L${x-s},${y+s*.75}Z" ${attrs}/>`;
+ case 'tridown':return `<path class="${cls}" d="M${x},${y+s*1.1}L${x+s},${y-s*.75}L${x-s},${y-s*.75}Z" ${attrs}/>`;
+ case 'diamond':return `<path class="${cls}" d="M${x},${y-s*1.2}L${x+s*1.1},${y}L${x},${y+s*1.2}L${x-s*1.1},${y}Z" ${attrs}/>`;
+ default:return `<circle class="${cls}" cx="${x}" cy="${y}" r="${r}" ${attrs}/>`}}
+function ngSpark(c){const ys=Object.keys(c.trend).sort();const vs=ys.map(y=>c.trend[y]);const W=300,H=86,L=30,R=8,T=8,B=18;
+ const lo=Math.floor(Math.min(...vs)-1),hi=Math.ceil(Math.max(...vs)+1);const X=i=>L+i*(W-L-R)/(ys.length-1),Y=v=>T+(hi-v)*(H-T-B)/(hi-lo);
+ const d=vs.map((v,i)=>(i?'L':'M')+X(i).toFixed(1)+','+Y(v).toFixed(1)).join('');const n=vs.length-1;
+ return `<svg class="ngspark" viewBox="0 0 ${W} ${H}" role="img" aria-label="ND-GAIN score ${ys[0]} to ${ys[n]}: from ${vs[0]} to ${vs[n]}">
+ <line class="ax" x1="${L}" x2="${W-R}" y1="${H-B}" y2="${H-B}"/><text class="tk" x="${L-4}" y="${Y(hi)+4}" text-anchor="end">${hi}</text><text class="tk" x="${L-4}" y="${Y(lo)}" text-anchor="end">${lo}</text>
+ <text class="tk" x="${L}" y="${H-4}">${ys[0]}</text><text class="tk" x="${W-R}" y="${H-4}" text-anchor="end">${ys[n]}</text>
+ <path class="ln" d="${d}"/><circle class="end" cx="${X(n)}" cy="${Y(vs[n])}" r="4"/>
+ ${ys.map((y,i)=>`<rect class="hit" x="${X(i)-(W-L-R)/(2*n)}" y="${T}" width="${(W-L-R)/n}" height="${H-T-B}" data-tip="${y}|ND-GAIN score ${fx(vs[i],1)}" tabindex="-1"/>`).join('')}</svg>`}
+function ngCard(e){if(!NG||!NG.c[e.id])return '';const c=NG.c[e.id];const q=NGQ[c.q];const ch=c.gain-c.g2014;
+ const bars=NGS.map(([k,n])=>{const v=c.sec[k];return `<div class="ngbar"><span>${n}</span><span class="tr">${v==null?'':`<i style="width:${(v*100).toFixed(1)}%"></i>`}</span><b>${v==null?'no data':fx(v)}</b></div>`}).join('');
+ return `<section class="ngcard" id="q-ndgain" style="--gc:${GCOL[e.group]}"><h2><span class="n">Index</span>National climate scores (ND-GAIN, 2024 data)</h2>
+ <p class="ngnote">A global index from the University of Notre Dame. It scores the whole country, not the landscape, and measures conditions, not whether particular measures work. <a href="#scores">Compare all 16 countries →</a></p>
+ <div class="ngtiles"><div class="ngt"><span class="eyebrow">ND-GAIN score</span><b>${fx(c.gain,1)}</b><span>rank ${c.rank} of ${NG.n} (1 = best)</span></div>
+ <div class="ngt"><span class="eyebrow">Vulnerability</span><b>${fx(c.v)}</b><span>${c.vrank}${ord(c.vrank)} most vulnerable of ${NG.nv}</span></div>
+ <div class="ngt"><span class="eyebrow">Readiness</span><b>${fx(c.r)}</b><span>${c.rrank}${ord(c.rrank)} most ready of ${NG.nr}</span></div>
+ <div class="ngt"><span class="eyebrow">Change since 2014</span><b>${ch>0?'+':ch<0?'−':''}${Math.abs(ch).toFixed(1)}</b><span>points on the score</span></div></div>
+ <div class="nggrid"><div><h3>Score over time</h3>${ngSpark(c)}<p class="ngq"><span class="qd q-${c.q}"></span><b>${q[0]}</b> than the global median. ${q[1]}.</p></div>
+ <div><h3>Vulnerability by sector</h3><p class="meta" style="margin:-4px 0 6px">0–1; higher = more vulnerable</p>${bars}</div>
+ <div><h3>Weakest points</h3><ul class="ngw">${c.worst.map(w=>`<li><b>${esc(w.n)}</b> <span class="meta">${fx(w.s)}${+w.y<2020?' (data from '+w.y+')':''}</span></li>`).join('')}</ul>
+ <p class="meta">Projected exposure: ${c.wexp.map(w=>esc(w.n.replace(/^Projected change in /,'').replace(/^Projected /,''))).join(', ')}.</p></div></div></section>`}
+function ord(n){const s=n%100;if(s>10&&s<14)return 'th';return {1:'st',2:'nd',3:'rd'}[n%10]||'th'}
+let ngSort={k:'rank',dir:1};
+function scores(){setNav('scores');if(!NG){app.innerHTML='<p class="empty">The index data did not load. Reload the page.</p>';return}
+ const ids=Object.keys(NG.c);
+ const W=780,H=480,L=60,R=40,T=24,B=50;const xr=[0.10,0.52],yr=[0.43,0.63];
+ const X=v=>L+(v-xr[0])*(W-L-R)/(xr[1]-xr[0]),Y=v=>T+(yr[1]-v)*(H-T-B)/(yr[1]-yr[0]);
+ const pts=ids.map(id=>({id,c:NG.c[id],x:X(NG.c[id].r),y:Y(NG.c[id].v)}));
+ // label placement: right of point, de-overlap vertically
+ const LEFT={'republic-of-congo':1,zimbabwe:1,tanzania:1,kenya:1};const lab=pts.map(p=>{const w=ngName(p.id).length*6.6;return LEFT[p.id]?{p,x:p.x-11-w,y:p.y+4,w,a:'end'}:{p,x:p.x+11,y:p.y+4,w}}).sort((a,b)=>a.y-b.y);
+ for(let it=0;it<60;it++){let moved=false;for(let i=0;i<lab.length;i++)for(let j=i+1;j<lab.length;j++){const a=lab[i],b=lab[j];if(a.x<b.x+b.w&&b.x<a.x+a.w&&Math.abs(a.y-b.y)<13){const d=(13-Math.abs(a.y-b.y))/2+.1;if(a.y<=b.y){a.y-=d;b.y+=d}else{a.y+=d;b.y-=d}moved=true}}if(!moved)break}
+ const xt=[0.1,0.2,0.3,0.4],yt=[0.45,0.5,0.55,0.6];
+ const svg=`<svg class="ngmx" viewBox="0 0 ${W} ${H}" role="img" aria-labelledby="mx-t">
+ <title id="mx-t">Vulnerability against readiness for the 16 countries, ND-GAIN 2026 release (2024 data)</title>
+ ${xt.map(v=>`<line class="gr" x1="${X(v)}" x2="${X(v)}" y1="${T}" y2="${H-B}"/><text class="tk" x="${X(v)}" y="${H-B+16}" text-anchor="middle">${v.toFixed(1)}</text>`).join('')}
+ ${yt.map(v=>`<line class="gr" x1="${L}" x2="${W-R}" y1="${Y(v)}" y2="${Y(v)}"/><text class="tk" x="${L-6}" y="${Y(v)+4}" text-anchor="end">${v.toFixed(2)}</text>`).join('')}
+ <line class="med" x1="${X(NG.medR)}" x2="${X(NG.medR)}" y1="${T}" y2="${H-B}"/><line class="med" x1="${L}" x2="${W-R}" y1="${Y(NG.medV)}" y2="${Y(NG.medV)}"/>
+ ${[[L+6,T+14,'start','More vulnerable,','less ready'],[X(NG.medR)+8,T+14,'start','More vulnerable,','more ready'],[L+6,H-B-24,'start','Less vulnerable,','less ready'],[X(NG.medR)+8,H-B-24,'start','Less vulnerable,','more ready']].map(([x,y,a,l1,l2])=>`<text class="ql" x="${x}" y="${y}" text-anchor="${a}"><tspan x="${x}">${l1}</tspan><tspan x="${x}" dy="14">${l2}</tspan></text>`).join('')}
+ <text class="tk" x="${X(NG.medR)-4}" y="${H-B-6}" text-anchor="end">global median</text><text class="tk" x="${W-R}" y="${Y(NG.medV)-5}" text-anchor="end">global median</text>
+ <text class="at" x="${(L+W-R)/2}" y="${H-8}" text-anchor="middle">Readiness → (higher = more ready)</text>
+ <text class="at" transform="translate(14,${(T+H-B)/2}) rotate(-90)" text-anchor="middle">Vulnerability → (higher = more vulnerable)</text>
+ ${lab.map(l=>`<text class="pl" x="${l.a?l.x+l.w:l.x}" y="${l.y}"${l.a?' text-anchor="end"':''}>${esc(ngName(l.p.id))}</text>`).join('')}
+ ${pts.map(p=>{const g=NGG[p.id];return `<a href="#${p.id}">${shape(NGL[g][1],p.x,p.y,6,'pt',`style="fill:var(--${g})" data-tip="${esc(ngName(p.id))}|Score ${fx(p.c.gain,1)} (rank ${p.c.rank} of ${NG.n}). Vulnerability ${fx(p.c.v)}, readiness ${fx(p.c.r)}. ${NGL[g][0]}." tabindex="0"`)}</a>`}).join('')}
+ </svg>`;
+ const legend=Object.entries(NGL).map(([g,[n,s]])=>`<span class="lg"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">${shape(s,8,8,5,'pt',`style="fill:var(--${g})"`)}</svg>${n}</span>`).join('');
+ const lo=0.1,hi=0.85;const heat=v=>{if(v==null)return '<td class="hc na">–</td>';const t=Math.max(0,Math.min(1,(v-lo)/(hi-lo)));return `<td class="hc" style="--t:${Math.round(12+t*78)}%;color:${t>.55?'var(--bg)':'var(--ink)'}">${fx(v)}</td>`};
+ const cols=[['name','Country'],['land','Landscape'],['rank','Score (rank)'],['vrank','Vulnerability (rank)'],['rrank','Readiness (rank)'],['ch','Change since 2014']].concat(NGS.map(([k,n])=>['s_'+k,n]));
+ const val=(id,k)=>{const c=NG.c[id];if(k==='name')return ngName(id);if(k==='land')return NGL[NGG[id]][0];if(k==='ch')return c.gain-c.g2014;if(k.startsWith('s_'))return c.sec[k.slice(2)]??-1;return c[k]};
+ const table=()=>{const s=[...ids].sort((a,b)=>{const x=val(a,ngSort.k),y=val(b,ngSort.k);return (typeof x==='string'?x.localeCompare(y):x-y)*ngSort.dir});
+  return `<table class="ngt-t"><thead><tr>${cols.map(([k,n])=>`<th aria-sort="${ngSort.k===k?(ngSort.dir>0?'ascending':'descending'):'none'}"><button type="button" data-sort="${k}">${n}${ngSort.k===k?(ngSort.dir>0?' ▲':' ▼'):''}</button></th>`).join('')}</tr></thead><tbody>${s.map(id=>{const c=NG.c[id],ch=c.gain-c.g2014;return `<tr><td><a href="#${id}"><b>${esc(ngName(id))}</b></a></td><td><span class="lgdot" style="background:var(--${NGG[id]})"></span>${NGL[NGG[id]][0]}</td><td>${fx(c.gain,1)} <span class="meta">(#${c.rank})</span></td><td>${fx(c.v)} <span class="meta">(#${c.vrank})</span></td><td>${fx(c.r)} <span class="meta">(#${c.rrank})</span></td><td>${ch>0?'+':ch<0?'−':''}${Math.abs(ch).toFixed(1)}</td>${NGS.map(([k])=>heat(c.sec[k])).join('')}</tr>`}).join('')}</tbody></table>`};
+ app.innerHTML=`<div class="eyebrow">Country scores</div><h1 class="h1" style="font-size:clamp(26px,4vw,38px)">How the 16 countries compare on the ND-GAIN index</h1>
+ <p class="lede">The Notre Dame Global Adaptation Initiative scores 190 countries on <b>vulnerability</b> (36 indicators across six sectors) and <b>readiness</b> to use adaptation money (9 indicators of economic, governance and social conditions). The score is readiness minus vulnerability, scaled 0–100. 2026 release, data for 2024.</p>
+ <p class="ngcave"><b>Read with care.</b> The index is national only, so it says nothing about the landscapes themselves. Exposure is modelled, not observed, and it does not test whether any measure works. Disaster preparedness data stop in 2019, and economic readiness is the same filled-in value for 6 of these countries. Confidence: high that the figures are read correctly, medium as a measure of real resilience.</p>
+ ${(()=>{const a=Object.entries(D.about).find(([k])=>/nd-gain/.test(k));const ul=a&&a[1].blocks.find(b=>b.t==='ul');return ul?`<h2 class="ngh">What stands out</h2><ul class="prose ngfind">${ul.items.map(i=>`<li>${i}</li>`).join('')}</ul>`:''})()}
+ <h2 class="ngh">All 16 are more vulnerable or less ready than most countries</h2>
+ <p class="meta">Each mark is one country; the dashed lines are the global medians. Hover or tap a mark for its score; click to open the country.</p>
+ <div class="nglg">${legend}</div><div class="ngmxw">${svg}</div>
+ <h2 class="ngh">Scores and vulnerability by sector</h2><p class="meta">Click a column heading to sort. Sector scores run 0–1; darker = more vulnerable.</p>
+ <div class="tbl ngtw" id="ngtab">${table()}</div>
+ <p class="meta" style="margin-top:12px">Source: University of Notre Dame, ND-GAIN Country Index 2026 and Technical Report. Read with care: the scores are national only and cannot show whether any technique works.</p>`;
+ const wire=()=>app.querySelectorAll('[data-sort]').forEach(b=>b.onclick=()=>{const k=b.dataset.sort;ngSort={k,dir:ngSort.k===k?-ngSort.dir:(k==='ch'||k.startsWith('s_')?-1:1)};document.getElementById('ngtab').innerHTML=table();wire()});
+ wire();window.scrollTo(0,0)}
+
+const isBonus=k=>k.startsWith('side-note')&&!/nd-gain/.test(k);
+function bonus(){
+  setNav('bonus');
+  const keys=Object.keys(D.about).filter(isBonus);
+  const col=['var(--other)','var(--kaza)','var(--virunga)'];
+  app.innerHTML=`<div class="eyebrow">Bonus points</div><h1 class="h1" style="font-size:clamp(26px,4vw,38px)">${['One','Two','Three','Four','Five'][keys.length-1]||keys.length} extras beyond the five questions</h1><p class="lede">Findings that sit across the landscapes rather than inside one country.</p>
+  <div class="bonus">${keys.sort().map((k,i)=>{const a=D.about[k];const [srcB,...more]=a.blocks;return `<article class="bcard" style="--bc:${col[i%2]}"><div class="eyebrow">Bonus ${i+1}</div><h2>${esc(a.title.replace(/^Side note:\s*/i,'').replace(/^./,c=>c.toUpperCase()))}</h2>${srcB?`<p class="src-line">${srcB.h}</p>`:''}${blocks(more)}${/nd-gain/.test(k)?'<p><a href="#scores"><b>See the chart and sortable table →</b></a></p>':''}</article>`}).join('')}</div>`;
+  wireMore(app);window.scrollTo(0,0);
+}
+function library(){
+  setNav('library');
+  app.innerHTML=`<div class="eyebrow">Document library</div><h1 class="h1" style="font-size:clamp(26px,4vw,38px)">Sources used in the analysis</h1>
+  <p class="lede">Every source note from the working doc, grouped by place. Links go to the original where it is public. Copies of open government and UN documents will be added in a later version.</p>
+  <div class="toolbar"><div class="seg" role="group" aria-label="Type">${[['all','All'],['off','Official'],['oth','Other']].map(([k,n])=>`<button type="button" data-t="${k}" aria-pressed="${k==='all'}">${n}</button>`).join('')}</div>
+  <label class="search"><span class="eyebrow" style="display:block;margin-bottom:4px">Search sources</span><input id="lib-search" type="search" placeholder="e.g. NDC, CCDR, evaluation, OKACOM"></label></div><div id="lib-list"></div>`;
+  let st={t:'all',q:''};
+  const render=()=>{let out='';const toc=[];const q=st.q.toLowerCase();
+    D.groups.forEach(g=>{let gi='';g.entities.forEach(e=>{const items=e.sources.filter(s=>{const tx=s.h.toLowerCase();if(q&&!strip(tx).includes(q))return false;if(st.t==='off'&&!tx.includes('tag-off'))return false;if(st.t==='oth'&&!tx.includes('tag-oth'))return false;return true});
+      items.forEach(s=>{gi+=`<div class="lib-item"><div class="where"><a href="#${e.id}">${esc(e.name)}</a></div>${highlight(s.h,st.q)}</div>`})});
+      if(gi){const n=(gi.match(/class="lib-item"/g)||[]).length;out+=`<details class="lib-group" id="lib-${g.id}"${q?' open':''}><summary><h2>${esc(g.title)}</h2><span class="meta">${n} source notes</span></summary>${gi}</details>`;toc.push([g.id,g.title,n])}});
+    const tail=(D.libraryTail||[]).map(b=>{if(b.t==='ul'){const its=b.items.filter(i=>!q||strip(i).toLowerCase().includes(q));return its.length?`<div class="lib-item"><ul>${its.map(i=>`<li>${highlight(i,st.q)}</li>`).join('')}</ul></div>`:''}if(b.t==='p'&&(!q||strip(b.h).toLowerCase().includes(q)))return `<p class="prose" style="margin:14px 0 6px">${b.h}</p>`;return ''}).join('');
+    if(tail&&st.t==='all')out+=`<div class="lib-group"><h2>Reading list kept in the doc</h2>${tail}</div>`;
+    const tocH=toc.length?`<nav class="libtoc" aria-label="Groups">${toc.map(([id,ti,n])=>`<a href="#library" data-open="lib-${id}">${esc(ti)} <span class="meta">${n}</span></a>`).join('')}<button type="button" class="switch" id="lib-all">Open all</button></nav>`:'';
+    document.getElementById('lib-list').innerHTML=out?tocH+out:`<p class="empty">No sources match.</p>`;
+    const L=document.getElementById('lib-list');L.querySelectorAll('[data-open]').forEach(a=>a.onclick=ev=>{ev.preventDefault();const d=document.getElementById(a.dataset.open);d.open=true;d.scrollIntoView({block:'start'})});
+    const ab=document.getElementById('lib-all');if(ab)ab.onclick=()=>{const all=[...L.querySelectorAll('details.lib-group')];const open=!all.every(d=>d.open);all.forEach(d=>d.open=open);ab.textContent=open?'Close all':'Open all'}};
+  app.querySelectorAll('[data-t]').forEach(b=>b.onclick=()=>{st.t=b.dataset.t;app.querySelectorAll('[data-t]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.t===st.t));render()});
+  const inp=document.getElementById('lib-search');let t;inp.addEventListener('input',()=>{clearTimeout(t);t=setTimeout(()=>{st.q=inp.value.trim();render()},180)});
+  render();
+}
+function about(){
+  setNav('about');
+  const order=['how-to-read-this-doc','source-status','what-to-find-next','which-documents-answer-which-question'];
+  app.innerHTML=`<div class="eyebrow">Sources, method and confidence levels</div><h1 class="h1" style="font-size:clamp(26px,4vw,38px);margin-bottom:14px">About the data</h1>`+order.filter(k=>D.about[k]).map(k=>`<section class="q"><h2>${esc(D.about[k].title)}</h2>${blocks(D.about[k].blocks)}</section>`).join('');
+  wireMore(app);window.scrollTo(0,0);
+}
+const tipEl=document.getElementById('tip');
+function showTip(el){const [a,b]=el.dataset.tip.split('|');tipEl.innerHTML=`<b>${esc(a)}</b>${b?esc(b):''}`;tipEl.classList.add('on');tipFor=el;
+  const r=el.getBoundingClientRect(),w=tipEl.offsetWidth,hh=tipEl.offsetHeight;let x=Math.min(Math.max(8,r.left+r.width/2-w/2),innerWidth-w-8);let y=r.top-hh-8;if(y<60)y=r.bottom+8;tipEl.style.left=x+'px';tipEl.style.top=y+'px'}
+let tipFor=null,tipPinned=false;
+function hideTip(){tipEl.classList.remove('on');tipFor=null;tipPinned=false}
+const coarse=matchMedia('(hover: none)').matches;
+document.addEventListener('mouseover',e=>{if(coarse||tipPinned)return;const t=e.target.closest('[data-tip]');if(t)showTip(t)});
+document.addEventListener('mouseout',e=>{if(coarse||tipPinned)return;if(e.target.closest('[data-tip]'))hideTip()});
+document.addEventListener('click',e=>{const t=e.target.closest('[data-tip]');if(t&&!t.closest('a[href]')){e.preventDefault();if(tipFor===t&&tipPinned){hideTip();return}showTip(t);tipPinned=true;return}if(!e.target.closest('#tip'))hideTip()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){hideTip();const vm=document.querySelector('.viewmenu');if(vm)vm.open=false}});
+document.addEventListener('focusin',e=>{const t=e.target.closest('[data-tip]');if(t)showTip(t)});
+document.addEventListener('focusout',hideTip);
+document.addEventListener('scroll',hideTip,{passive:true});
+const fmt=n=>Number(n).toLocaleString('en-GB');
+function statStrip(){const s=D.stats;if(!s)return '';return `<div class="stats">
+  <a class="stat" href="#evidence"><div class="v">${fmt(s.docs)}</div><div class="l">documents in the evidence base</div></a>
+  <a class="stat" href="#evidence"><div class="v">~${fmt(Math.round(s.pages/100)*100)}</div><div class="l">pages</div></a>
+  <a class="stat" href="#evidence"><div class="v">${fmt(s.findings)}</div><div class="l">findings, each with a source and confidence level</div></a>
+  <a class="stat" href="#evidence"><div class="v">${fmt(s.webSources)}</div><div class="l">further web sources linked</div></a></div>`}
+function evidence(){
+  setNav('evidence');const s=D.stats;const T=Object.entries(s.byType);const maxD=Math.max(...T.map(([,v])=>v.docs));
+  const c=s.confidence,ct=(c.High||0)+(c.Medium||0)+(c.Low||0),pc=x=>Math.round(100*(x||0)/ct);
+  const L=s.languages,lt=(L.EN||0)+(L.FR||0);
+  app.innerHTML=`<div class="eyebrow">Evidence base</div><h1 class="h1" style="font-size:clamp(26px,4vw,38px)">What the analysis is built on</h1>
+  <p class="lede">Every document sent for the analysis, counted once. Pages are PDF pages; a few text-only files are estimated.</p>
+  <div class="stats">
+   <div class="stat"><div class="v">${fmt(s.docs)}</div><div class="l">documents</div></div>
+   <div class="stat"><div class="v">~${fmt(Math.round(s.pages/100)*100)}</div><div class="l">pages in those documents</div></div>
+   <div class="stat"><div class="v">${fmt(s.webSources)}</div><div class="l">further web sources, linked in the notes</div></div>
+   <div class="stat"><div class="v">${s.countries} + ${s.places-s.countries}</div><div class="l">countries + landscape views</div></div>
+   <div class="stat"><div class="v">${fmt(s.findings)}</div><div class="l">findings in the tables</div></div>
+   <div class="stat"><div class="v">~${fmt(Math.round(s.pageRefs/10)*10)}</div><div class="l">page references</div></div>
+  </div>
+  <section class="q"><h2>Documents by type</h2>
+   <div class="bars">${T.map(([k,v])=>`<div class="bar"><span>${esc(k)}</span><div class="track"><div class="fill" style="width:${100*v.docs/maxD}%"></div></div><span class="n">${v.docs} docs · ${fmt(v.pages)} pp</span></div>`).join('')}</div></section>
+  <section class="q"><h2>How confident the findings are</h2>
+   <div class="stack" role="img" aria-label="High ${c.High}, Medium ${c.Medium}, Low ${c.Low}"><span class="c-hi" style="width:${pc(c.High)}%">${pc(c.High)}%</span><span class="c-med" style="width:${pc(c.Medium)}%">${pc(c.Medium)}%</span><span class="c-lo" style="width:${pc(c.Low)}%">${pc(c.Low)}%</span></div>
+   <p class="lede" style="font-size:14px">${fmt(c.High)} high, ${fmt(c.Medium)} medium and ${fmt(c.Low)} low. Point at or tap any confidence label in a table to see why it was given.</p>
+   <h3 class="cdh">What the levels mean</h3>
+   <p class="lede" style="font-size:14px">For hazards, actions, techniques and future plans (questions 1, 2, 3 and 5), confidence measures how clearly and specifically the source says it.</p>
+   <div class="tbl"><table><thead><tr><th>Level</th><th>Questions 1, 2, 3 and 5</th></tr></thead><tbody>${Object.entries(CONFDEF).filter(([k])=>LVL(k)===k).map(([k,v])=>`<tr><td>${confBadge(k)}</td><td>${esc(v)}</td></tr>`).join('')}</tbody></table></div>
+   <p class="lede" style="font-size:14px">For what works (question 4), a stricter rule applies: confidence measures how strong the evidence is that the technique works.</p>
+   <div class="tbl"><table><thead><tr><th>Level</th><th>Question 4: what works</th></tr></thead><tbody>${Object.entries(CONFDEF4).filter(([k])=>LVL(k)===k).map(([k,v])=>`<tr><td>${confBadge(k)}</td><td>${esc(v)}</td></tr>`).join('')}</tbody></table></div>
+   <h3 class="cdh">Strength of the evidence behind a finding</h3>
+   <p class="lede" style="font-size:14px">A clearly stated finding is not always strongly evidenced. As a rule of thumb, by type of source:</p>
+   <ul class="prose ngfind"><li><b>Stronger:</b> an independent evaluation, audit or peer-reviewed study.</li><li><b>Moderate:</b> analysis or modelling (for example a World Bank Country Climate and Development Report), an official government plan or submission (what the government reports or intends, not checked independently), or another secondary study or review.</li><li><b>Weaker:</b> a project's, agency's or government's own progress report, or the press; not independently checked.</li></ul></section>
+  <section class="q"><h2>Languages</h2>
+   <div class="stack" role="img" aria-label="English ${L.EN}, French ${L.FR}"><span style="width:${100*L.EN/lt}%;background:var(--soft)">English ${L.EN}</span><span style="width:${100*L.FR/lt}%;background:var(--oth-bg);color:var(--oth)">French ${L.FR}</span></div>
+   <p class="lede" style="font-size:14px">French documents (Cameroon, CAR, DRC, Gabon, Republic of Congo, Madagascar, TRIDOM) were read in French and summarised in English.</p></section>
+  <section class="q"><h2>How to read these numbers</h2><div class="prose"><p>Documents were searched for the five questions and the relevant parts read closely; not every page of every document was read in full. ${fmt(s.linkedCells)} of the ${fmt(s.sourceCells)} source entries in the tables link straight to the document or to the list where it is published.</p></div></section>`;
+  window.scrollTo(0,0);
+}
+let IDX=null, pendingHL=null;
+function buildIndex(){IDX=[];
+  const add=(o)=>{o.low=o.text.toLowerCase();IDX.push(o)};
+  D.groups.forEach(g=>g.entities.forEach(e=>{
+    e.intro.forEach(b=>{if(b.t==='p')add({e,sec:null,label:'Overview',title:e.name,text:strip(b.h)})});
+    e.sources.forEach(s=>add({e,sec:null,label:'Sources',title:'Source note',text:strip(s.h)}));
+    Q.forEach((q,qi)=>{const s=e.q[q[0]];if(!s)return;s.blocks.forEach(b=>{
+      if(b.t==='table')b.rows.forEach(r=>add({e,sec:'q-'+q[0],label:'Q'+(qi+1)+' '+q[1],title:strip(r[0]),text:r.map(strip).join(' · ')}));
+      else if(b.t==='p')add({e,sec:'q-'+q[0],label:'Q'+(qi+1)+' '+q[1],title:/^Verdict/.test(strip(b.h))?'Verdict':'Note',text:strip(b.h)});
+      else if(b.items)b.items.forEach(i=>add({e,sec:'q-'+q[0],label:'Q'+(qi+1)+' '+q[1],title:'Note',text:strip(i)}))})})}));
+  Object.entries(D.about).forEach(([k,a])=>a.blocks.forEach(b=>{const page=/nd-gain/.test(k)?'scores':k.startsWith('side-note')?'bonus':'about';const items=b.t==='table'?b.rows.map(r=>r.map(strip).join(' · ')):b.items?b.items.map(strip):[strip(b.h||'')];
+    items.forEach(t=>t&&add({e:null,page,label:page==='bonus'?'Bonus points':page==='scores'?'Scores':'About the data',title:a.title.replace(/^Side note:\s*/i,''),text:t}))}));
+}
+function snippet(t,terms){const lo=t.toLowerCase();let i=Math.min(...terms.map(w=>{const j=lo.indexOf(w);return j<0?1e9:j}));if(i>1e8)i=0;
+  let s=Math.max(0,i-90),e=Math.min(t.length,i+200);return (s>0?'…':'')+t.slice(s,e)+(e<t.length?'…':'')}
+let lastQ='';
+function searchView(){
+  setNav('');if(!IDX)buildIndex();const q=lastQ;
+  app.innerHTML=`<div class="eyebrow">Search</div><h1 class="h1" style="font-size:clamp(26px,4vw,38px)">Search the whole site</h1>
+  <div class="toolbar"><label class="search"><span class="eyebrow" style="display:block;margin-bottom:4px">Words to find (all must appear)</span><input id="sq" type="search" value="${esc(q)}" placeholder="e.g. Okavango flood, mangrove restoration, early warning Zambia"></label></div><div id="sres"></div>`;
+  const inp=document.getElementById('sq');let t;inp.addEventListener('input',()=>{clearTimeout(t);t=setTimeout(()=>{lastQ=inp.value.trim();document.getElementById('gq').value=lastQ;render()},200)});
+  function render(){const terms=lastQ.toLowerCase().split(/\s+/).filter(w=>w.length>1);const box=document.getElementById('sres');
+    if(!terms.length){box.innerHTML='<p class="empty">Type at least one word. Results cover every country and landscape page, all five questions, source notes, bonus points and the guidance pages.</p>';return}
+    const hits=IDX.filter(x=>terms.every(w=>x.low.includes(w)));
+    const shown=hits.slice(0,150);
+    box.innerHTML=`<p class="eyebrow" style="margin:6px 0 12px">${hits.length} result${hits.length===1?'':'s'}${hits.length>150?' (first 150 shown)':''}</p>`+
+      (shown.map((x,i)=>{const gc=x.e?GCOL[x.e.group]:'var(--accent)';return `<a class="res" style="--gc:${gc}" href="#${x.e?x.e.id:x.page}" data-i="${i}"><div class="where">${esc(x.e?x.e.name:x.label)}${x.e?' · '+esc(x.label):''}</div><div class="t">${highlight(esc(x.title),terms.join('|')?terms[0]:'')}</div><div class="s">${terms.reduce((s,w)=>highlight(s,w),esc(snippet(x.text,terms)))}</div></a>`}).join('')||'<p class="empty">Nothing found. Try fewer or shorter words.</p>');
+    box.querySelectorAll('.res').forEach(a=>a.addEventListener('click',()=>{const x=shown[+a.dataset.i];pendingHL={sec:x.sec,terms}}));}
+  render();inp.focus();window.scrollTo(0,0);
+}
+document.getElementById('gsearch').addEventListener('submit',ev=>{ev.preventDefault();lastQ=document.getElementById('gq').value.trim();if(location.hash==='#search')searchView();else location.hash='search'});
+function route(){
+  if(!D)return;
+  const h=decodeURIComponent(location.hash.slice(1));
+  if(!h||h==='map')return home();
+  if(h.startsWith('compare-')){const [k,ids]=h.slice(8).split('/');if(Q.some(q=>q[0]===k)){cmpState.sel=(ids||'').split(',').filter(x=>ENT[x]);return compare(k)}}
+  if(h==='library')return library();
+  if(h==='about')return about();
+  if(h==='bonus')return bonus();
+  if(h==='scores')return scores();
+  if(h==='evidence')return evidence();
+  if(h==='search')return searchView();
+  if(ENT[h])return place(ENT[h]);
+  app.innerHTML=`<p class="empty">There is no page called “${esc(h)}”. <a href="#map">Go to the map</a> or use the search box.</p>`;setNav('');
+}
+/* first mention of NAP on each page is written out in full */
+function expandNAP(){const tw=document.createTreeWalker(app,NodeFilter.SHOW_TEXT,{acceptNode:n=>{const p=n.parentElement;if(!p||p.closest('script,style,svg,details:not([open]) > :not(summary),.tbl.clip tr.more'))return NodeFilter.FILTER_REJECT;return /\bNAPs?\b/.test(n.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_SKIP}});
+  let n;while((n=tw.nextNode())){if(n.parentElement.closest('details:not([open])')&&!n.parentElement.closest('summary'))continue;
+    const v=n.nodeValue;const m=v.match(/\bNAP(s?)\b/);if(!m)continue;const before=v.slice(0,m.index);
+    if(/National Adaptation Plans? \($/.test(before))return;
+    n.nodeValue=before+(m[1]?'National Adaptation Plans (NAPs)':'National Adaptation Plan (NAP)')+v.slice(m.index+m[0].length);return}}
+let napT;new MutationObserver(()=>{clearTimeout(napT);napT=setTimeout(expandNAP,30)}).observe(app,{childList:true,subtree:true});
+
+window.addEventListener('hashchange',route);
+fetch('map.json').then(r=>r.ok?r.json():null).then(m=>{M=m;const hh=decodeURIComponent(location.hash.slice(1));if(D&&(!hh||hh==='map'||(ENT[hh]&&ENT[hh].kind==='landscape')))route()}).catch(()=>{});
+fetch('ndgain.json').then(r=>r.ok?r.json():null).then(n=>{NG=n;const hh=decodeURIComponent(location.hash.slice(1));if(D&&(hh==='scores'||(ENT[hh]&&ENT[hh].kind==='country')))route()}).catch(()=>{});
+fetch('data.json').then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).then(d=>{D=d;try{d.about['how-to-read-this-doc'].blocks.filter(b=>b.t==='table'&&/level/i.test(strip(b.head[0]))).forEach(tb=>{const tgt=/question 4/i.test(strip(tb.head[1]))?CONFDEF4:CONFDEF;tb.rows.forEach(r=>tgt[strip(r[0]).trim()]=strip(r[1]).trim().replace(/([^.])$/,'$1.'))})}catch(e){}d.groups.forEach(g=>g.entities.forEach(e=>ENT[e.id]=e));route()}).catch(err=>{app.innerHTML=`<p class="empty">The analysis data did not load (${esc(err.message)}). Reload the page; if it keeps failing, the data file is missing from this version.</p>`});
+})();
+</script>
+
+</body></html>
+</body>
+</html>
