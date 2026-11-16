@@ -367,6 +367,9 @@ details.lib-group{margin-bottom:6px}
 .ngfind{max-width:80ch;margin:0 0 8px;padding-left:20px}.ngfind li{margin-bottom:8px}
 .cdh{font-size:16px;margin:26px 0 8px}
 .intdoc{display:inline-block;margin-left:5px;font-size:10.5px;font-weight:700;letter-spacing:.02em;padding:0 6px;border-radius:3px;border:1px dashed var(--line);color:var(--muted);white-space:nowrap;vertical-align:1px}
+.themebtn{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:999px;border:1px solid #555;background:transparent;color:#d6d6d6;cursor:pointer;padding:0;flex:none}
+.themebtn:hover{color:#fff;border-color:#888}
+.themebtn .i-sun{display:none}.themebtn.dark .i-sun{display:inline}.themebtn.dark .i-moon{display:none}
 /* phone: header, question bar and tables as cards */
 @media (max-width:700px){
   header.top .wrap{gap:6px}
@@ -407,7 +410,7 @@ details.lib-group{margin-bottom:6px}
 
 <a class="skip" href="#app">Skip to content</a>
 <header class="top"><div class="wrap">
-  <a class="brand" href="#map">Landscape Climate Resilience <small title="Team working draft; not an official or WWF publication">Team draft · not a WWF publication</small></a>
+  <a class="brand" href="#map">Landscape Climate Resilience <small title="Team working draft; not an official or WWF publication">Team draft · not an official WWF publication</small></a>
   <nav class="main" aria-label="Main">
     <a href="#map" data-nav="map">Map</a>
     <a href="#compare-hazards" data-nav="compare">Compare</a>
@@ -418,6 +421,7 @@ details.lib-group{margin-bottom:6px}
     <a href="#about" data-nav="about">About the data</a>
   </nav>
   <div class="tools"><form class="gsearch" role="search" id="gsearch"><input id="gq" type="search" placeholder="Search…" aria-label="Search the whole site"></form>
+  <button type="button" class="themebtn" id="themebtn" aria-label="Switch to dark mode" title="Switch light / dark"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path class="i-moon" d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/><g class="i-sun" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5" fill="currentColor" stroke="none"/><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg></button>
   <details class="viewmenu"><summary class="switch">View</summary><div class="vm">
     <button type="button" class="switch" id="widebtn" aria-pressed="false" title="Use the whole screen: full width, and full screen where the browser allows it">Full screen</button>
     <button type="button" class="switch" id="bigbtn" aria-pressed="false" title="Larger text for projecting in a meeting">Presentation size</button>
@@ -454,6 +458,13 @@ function setWide(on,fs){document.body.classList.toggle('wide',on);wbtn.setAttrib
       if(fs&&!on&&document.fullscreenElement)document.exitFullscreen().catch(()=>{})}catch(e){}
   setTimeout(()=>document.querySelectorAll('.mapbox svg,.minimap svg').forEach(sizeLabels),60)}
 wbtn.onclick=()=>setWide(!document.body.classList.contains('wide'),true);
+const tbtn=document.getElementById('themebtn');
+const isDark=()=>{const a=document.documentElement.getAttribute('data-theme');return a?a==='dark':matchMedia('(prefers-color-scheme: dark)').matches};
+function syncTheme(){const d=isDark();tbtn.classList.toggle('dark',d);tbtn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode');tbtn.title=d?'Switch to light mode':'Switch to dark mode'}
+function setTheme(m){if(m)document.documentElement.setAttribute('data-theme',m);else document.documentElement.removeAttribute('data-theme');store.set('theme',m||'');syncTheme()}
+tbtn.onclick=()=>setTheme(isDark()?'light':'dark');
+{const s=store.get('theme');if(s==='light'||s==='dark')setTheme(s);else syncTheme()}
+try{matchMedia('(prefers-color-scheme: dark)').addEventListener('change',syncTheme)}catch(e){}
 const bbtn=document.getElementById('bigbtn');
 function setBig(on){document.body.classList.toggle('big',on);bbtn.setAttribute('aria-pressed',on);store.set('big',on?'1':'0');setTimeout(()=>{setHH();document.querySelectorAll('.mapbox svg,.minimap svg').forEach(sizeLabels)},60)}
 bbtn.onclick=()=>setBig(!document.body.classList.contains('big'));setBig(store.get('big')==='1');
